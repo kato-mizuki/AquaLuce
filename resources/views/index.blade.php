@@ -113,7 +113,7 @@
         <!-- Footer -->
         <footer class="footer">
         <div class="footer-inner">
-            <img src="img/logo_footer.png" alt="Blueveil Logo" class="footer-logo">
+            <img src="img/logo.png" alt="Blueveil Logo" class="footer-logo">
             <ul class="footer-info">
                 <li>営業時間<br>10:00 ~ 19:00</li>
                 <li>所在地<br>東京都港区青山x-x-x</li>
