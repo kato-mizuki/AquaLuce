@@ -55,19 +55,24 @@ AquaLuce/
 1. リポジトリをクローン
 ```bash
  git clone https://github.com/kato-mizuki/AquaLuce.git  
+```
 2. ディレクトリに移動  
 ```bash
  cd AquaLuce
+ ```
 3. Laravelプロジェクトの場合、依存関係をインストール  
 ```bash
  composer install
+ ```
 4. .env ファイルを作成して設定
 ```bash
-cp .env.example .env
+cp .env.example .env  
 php artisan key:generate
+```
 5. サーバー起動
 ```bash
 php artisan serv
+```
 
 ## 🎨 ロゴ
 
