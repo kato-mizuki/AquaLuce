@@ -13,7 +13,7 @@
         justify-content: center;
         text-align: center;
     /* 背景：海っぽい水色グラデーション */
-        background: linear-gradient(135deg, #6ECEDA 10%, #00A8E8 100%);
+        background: linear-gradient(135deg, #6ECEDA 50%, #00A8E8 100%);
         color: #fff;
         position: relative;
         overflow: hidden;
@@ -23,8 +23,10 @@
     .hero::after {
         content: "";
         position: absolute;
-        top: 0; left: 0;
-        width: 100%; height: 100%;
+        top: 0; 
+        left: 0;
+        width: 100%; 
+        height: 100%;
         background: url('https://www.transparenttextures.com/patterns/wavecut.png');
         opacity: 0.15;
     }
@@ -61,6 +63,11 @@
     .btn:hover {
         background: #00A8E8;
         color: #fff;
+    }
+/* 波形画像の設定 */
+    .nami img{
+        width: 100%;
+        size: cover;
     }
 /* section(商品）の設定 */
 /* Products Section */

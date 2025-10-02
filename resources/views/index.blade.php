@@ -17,6 +17,9 @@
                 <a href="#products" class="btn">Shop Now</a>
             </div>
         </section>
+        <div class="nami">
+            <img src="img/hakei.png" alt="波紋">
+        </div>
         <!-- Products Section -->
         <section id="products" class="products">
             <h2 class="section-title">Our Products</h2>
