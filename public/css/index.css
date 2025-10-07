@@ -122,19 +122,28 @@
     .product-cards {
         display: flex;
         justify-content: center;
-        gap: 30px;
+        gap: 20px;
         flex-wrap: wrap;
+        transition: opacity 1s ease-in-out;
+        opacity: 1;
     }
-
+    .product-cards.fade-out {
+        opacity: 0;
+        }
     .product-card {
         background: #fff;
         border-radius: 20px;
         padding: 20px;
         width: 280px;
         box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-        transition: transform 0.3s, box-shadow 0.3s;
+        transition: transform 1s ease, opacity 1.5s ease, box-shadow 0.3s;
+        opacity: 0;
+        transform: scale(1);
     }
-
+    .product-card.active {
+        opacity: 1;
+        transform: scale(1);
+    }
     .product-card img {
         width: 100%;
         border-radius: 15px;
