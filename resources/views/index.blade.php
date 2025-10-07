@@ -28,10 +28,10 @@
                         <img src="{{ asset('img/' . $product->image) }}" alt="{{ $product->name }}">
                         <h3>{{ $product->name }}</h3>
                         <p>{{ $product->description }}</p>
-                        <form action="{{ route('products.index') }}" method="get">
-                            @csrf
-                            <button type="submit" class="btn">products view</button>
-                        </form>
+                        <!-- 商品詳細ページへのリンクに変更 -->
+                        <a href="{{ route('products.show', ['id' => $product->id]) }}" class="btn">
+                            Product View
+                        </a>
                     </div>
                 @endforeach
                 <!-- ここでループ終了 -->
@@ -39,7 +39,6 @@
             <button class="next-btn">›</button>
         </div>
     </section>
-
 
     <!-- Before / After Section -->
     <section class="before-after">
