@@ -11,10 +11,10 @@ class ProductSeeder extends Seeder
     public function run(): void
     {
         Product::create([
-            'name' => 'AquaLuce モイスチャーローション',
+            'name' => 'Blueveil Aqua Essence Lotion',
             'price' => 2800,
             'category' => 'スキンケア',
-            'image' => 'lotion.jpg',
+            'image' => 'lotion.png',
             'description' => '肌にうるおいを与え、透明感を引き出す化粧水。',
         ]);
 
@@ -22,7 +22,7 @@ class ProductSeeder extends Seeder
             'name' => 'AquaLuce クレンジングジェル',
             'price' => 3200,
             'category' => 'スキンケア',
-            'image' => 'cleansing.jpg',
+            'image' => 'cleansing.png',
             'description' => 'メイクや汚れをやさしく落とすジェルタイプのクレンジング。',
         ]);
     }
