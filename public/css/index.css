@@ -148,7 +148,8 @@
         transform: scale(1);
     }
     .product-card img {
-        width: 50%;
+        width: 285px;
+        height: 285px;
         border-radius: 15px;
         margin-bottom: 15px;
     }
