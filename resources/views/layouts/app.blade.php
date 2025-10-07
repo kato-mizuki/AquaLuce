@@ -19,7 +19,7 @@
                 <ul class="nav-links">
                     <li><a href="/">Home</a></li>
                     <li><a href="{{ route('products.index') }}">Products</a></li>
-                    <li><a href="{{ route('cart.view') }}">Cart</a></li>
+                    <li><a href="{{ route('cart.index') }}">Cart</a></li>
                 </ul>
             </nav>
         </header>

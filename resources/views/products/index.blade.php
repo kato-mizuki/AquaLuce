@@ -5,7 +5,7 @@
   <h2>商品一覧</h2>
   <div class="product-grid">
     @foreach($products as $product)
-      <div class="product-card">
+      <div class="product">
         <img src="{{ asset('img/' . $product->image) }}" alt="{{ $product->name }}">
         <h3>{{ $product->name }}</h3>
         <p>¥{{ number_format($product->price) }}</p>
