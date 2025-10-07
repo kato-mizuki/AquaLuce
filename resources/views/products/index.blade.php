@@ -1,0 +1,17 @@
+@extends('layouts.app')
+
+@section('content')
+<section class="products">
+  <h2>商品一覧</h2>
+  <div class="product-grid">
+    @foreach($products as $product)
+      <div class="product-card">
+        <img src="{{ asset('img/' . $product->image) }}" alt="{{ $product->name }}">
+        <h3>{{ $product->name }}</h3>
+        <p>¥{{ number_format($product->price) }}</p>
+        <a href="{{ route('products.show', $product->id) }}" class="btn">詳細を見る</a>
+      </div>
+    @endforeach
+  </div>
+</section>
+@endsection

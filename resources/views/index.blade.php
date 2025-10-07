@@ -8,7 +8,7 @@
         <div class="hero-content">
             <h1 class="logo">AquaLuce</h1>
             <p class="tagline">水と光が織りなす、透明感あふれる素肌へ</p>
-            <a href="{{ route('products') }}" class="btn main-btn">Shop Now</a>
+            <a href="{{ route('products.index') }}" class="btn main-btn">Shop Now</a>
         </div>
     </section>
 
