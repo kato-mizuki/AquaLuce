@@ -6,6 +6,13 @@ use App\Models\Product;
 
 class ProductController extends Controller
 {
+    public function home()
+    {
+        // トップページ用
+        $products = Product::take(9)->get(); // 上位8商品
+        return view('index', compact('products'));
+    }
+
     public function index()
     {
         $products = Product::all();

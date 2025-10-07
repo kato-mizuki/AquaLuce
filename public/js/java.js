@@ -84,3 +84,44 @@ document.addEventListener('DOMContentLoaded', function() {
   showCards();
   startAutoSlide();
 });
+//カート内計算設定
+ocument.querySelectorAll('.quantity').forEach(input => {
+  input.addEventListener('input', () => {
+    const id = input.dataset.id;
+    const quantity = input.value;
+
+    fetch('{{ route("cart.update") }}', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'X-CSRF-TOKEN': '{{ csrf_token() }}'
+      },
+      body: JSON.stringify({ id, quantity })
+    })
+    .then(res => res.json())
+    .then(data => {
+      if (data.success) {
+        // 小計と合計を更新
+        input.closest('tr').querySelector('.subtotal').textContent = data.subtotal;
+        document.getElementById('total').textContent = data.total;
+      }
+    });
+  });
+});
+
+document.getElementById('purchaseBtn').addEventListener('click', () => {
+  fetch('{{ route("cart.purchase") }}', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      'X-CSRF-TOKEN': '{{ csrf_token() }}'
+    }
+  })
+  .then(res => res.json())
+  .then(data => {
+    if (data.success) {
+      alert('購入処理が完了しました！');
+      window.location.href = '/thanks';
+    }
+  });
+});

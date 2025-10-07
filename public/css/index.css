@@ -351,71 +351,7 @@
         background: #00C0FF;
         color: #fff;
     }
-/* フッターの設定 */
-    /* Footer */
-    .footer {
-        background: #ffffff;
-        padding: 40px 20px 20px;
-        text-align: center;
-    }
 
-    .footer-inner {
-        display: flex;
-        justify-content: space-between;
-        flex-wrap: wrap;
-        align-items: flex-start;
-        max-width: 1200px;
-        margin: 0 auto;
-        gap: 20px;
-    }
-
-    .footer-logo {
-        width: 120px;
-    }
-
-    .footer-info {
-        list-style: none;
-        padding: 0;
-        margin: 0;
-        text-align: left;
-    }
-
-    .footer-info li {
-        margin-bottom: 8px;
-        font-size: 0.9rem;
-    }
-
-    .footer-sns a {
-        font-size: 1.5rem;
-        color: #00A8E8;
-        margin: 0 8px;
-        transition: color 0.3s;
-    }
-
-    .footer-sns a:hover {
-        color: #006C91;
-    }
-
-    .footer .copyright {
-        display: block;
-        margin-top: 20px;
-        font-size: 0.8rem;
-        color: #666;
-    }
-
-    /* レスポンシブ */
-    @media (max-width: 768px) {
-        .footer-inner {
-            flex-direction: column;
-            align-items: center;
-            text-align: center;
-        }
-
-        .footer-info {
-            margin: 20px 0;
-            text-align: center;
-        }
-    }
 /* アニメーション設定 */
 /* 初期状態（非表示） */
     .fade-in {

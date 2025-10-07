@@ -1,25 +1,53 @@
 @extends('layouts.app')
 
-@section('title', 'カート - AquaLuce')
-
 @section('content')
-<section class="cart">
-    <h2 class="section-title">Shopping Cart</h2>
+<div class="cart-container">
+    <h2>Shopping Cart</h2>
 
-    {{-- カートに商品がある場合の例 --}}
-    <div class="cart-item">
-        <img src="{{ asset('img/lotion.png') }}" alt="Lotion">
-        <div class="cart-details">
-            <h3>Blueveil Aqua Essence Lotion</h3>
-            <p>数量: 1</p>
-            <p>価格: ¥3,000</p>
+    @if(session('success'))
+        <div class="alert alert-success">{{ session('success') }}</div>
+    @endif
+
+    @if(count($cart) > 0)
+        <table class="cart-table">
+            <thead>
+                <tr>
+                    <th>商品</th>
+                    <th>価格</th>
+                    <th>数量</th>
+                    <th>小計</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                @php $total = 0; @endphp
+                @foreach($cart as $id => $item)
+                    @php $total += $item['price'] * $item['quantity']; @endphp
+                    <tr>
+                        <td>
+                            <img src="{{ asset('img/' . $item['image']) }}" width="80">
+                            <p>{{ $item['name'] }}</p>
+                        </td>
+                        <td>¥{{ number_format($item['price']) }}</td>
+                        <td>{{ $item['quantity'] }}</td>
+                        <td>¥{{ number_format($item['price'] * $item['quantity']) }}</td>
+                        <td>
+                            <form action="{{ route('cart.remove', $id) }}" method="POST">
+                                @csrf
+                                <button type="submit" class="btn-remove">削除</button>
+                            </form>
+                        </td>
+                    </tr>
+                @endforeach
+            </tbody>
+        </table>
+
+        <div class="cart-total">
+            <h3>合計金額: ¥{{ number_format($total) }}</h3>
+            <button class="btn-checkout">購入手続きへ</button>
         </div>
-        <a href="#" class="btn btn-remove">削除</a>
-    </div>
-
-    <div class="cart-summary">
-        <p>合計金額: ¥3,000</p>
-        <a href="#" class="btn btn-large">購入手続きへ</a>
-    </div>
-</section>
+    @else
+        <p>カートに商品がありません。</p>
+    @endif
+</div>
 @endsection

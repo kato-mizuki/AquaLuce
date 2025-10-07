@@ -29,11 +29,24 @@
             @yield('content')
         </main>
 
-        {{-- フッター --}}
+        {{-- フッター --}}        
+        <!-- Footer -->
         <footer class="footer">
             <div class="footer-inner">
-                <p>© 2025 AquaLuce. All Rights Reserved.</p>
+                <img src="{{ asset('img/logo.png') }}" alt="Blueveil Logo" class="footer-logo">
+                <ul class="footer-info">
+                    <li>営業時間<br>10:00 ~ 19:00</li>
+                    <li>所在地<br>東京都港区青山x-x-x</li>
+                    <li>TEL<br>03-xxxx-xxxx</li>
+                    <li>Mail<br>info@blueveil.com</li>
+                </ul>
+                <div class="footer-sns">
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fa-brands fa-tiktok"></i></a>
+                    <a href="#"><i class="fa-brands fa-square-x-twitter"></i></a>
+                </div>
             </div>
+            <small class="copyright">© 2025 Blueveil. All Rights Reserved.</small>
         </footer>
 
         {{-- JS --}}

@@ -3,65 +3,80 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Product;
 
 class CartController extends Controller
 {
-    // カート表示
+    //カート一覧
     public function index(Request $request)
     {
         $cart = session()->get('cart', []);
-        $total = array_sum(array_map(fn($item) => $item['price'] * $item['quantity'], $cart));
-        return view('cart', compact('cart', 'total'));
+        return view('cart', compact('cart'));
     }
 
-    // 商品追加
-    public function add(Request $request)
+    //カートに追加
+    public function add(Request $request, $id)
     {
-        $id = $request->input('id');
-        $name = $request->input('name');
-        $price = $request->input('price');
-        $image = $request->input('image');
-
+        $product = Product::findOrFail($id);
         $cart = session()->get('cart', []);
 
         if (isset($cart[$id])) {
             $cart[$id]['quantity']++;
         } else {
             $cart[$id] = [
-                'name' => $name,
-                'price' => $price,
-                'image' => $image,
+                'name' => $product->name,
+                'price' => $product->price,
                 'quantity' => 1,
+                'image' => $product->image,
             ];
         }
 
         session()->put('cart', $cart);
-        return redirect()->route('cart.index')->with('success', '商品をカートに追加しました！');
+        return redirect()->back()->with('success', '商品をカートに追加しました！');
     }
 
-    // 数量変更
-    public function update(Request $request)
+    //カートから削除
+    public function remove(Request $request, $id)
     {
-        $id = $request->input('id');
-        $quantity = $request->input('quantity');
-
         $cart = session()->get('cart', []);
+
         if (isset($cart[$id])) {
-            $cart[$id]['quantity'] = max(1, (int)$quantity);
+            unset($cart[$id]);
             session()->put('cart', $cart);
         }
 
-        return redirect()->route('cart.index');
+        return redirect()->back()->with('success', '商品をカートから削除しました');
     }
 
-    // 商品削除
-    public function remove(Request $request)
+    //【追加】数量変更を反映する（AJAX）
+    public function updateQuantity(Request $request)
     {
-        $id = $request->input('id');
         $cart = session()->get('cart', []);
-        unset($cart[$id]);
-        session()->put('cart', $cart);
+        $id = $request->input('id');
+        $quantity = (int) $request->input('quantity');
 
-        return redirect()->route('cart.index');
+        if (isset($cart[$id])) {
+            $cart[$id]['quantity'] = max(1, $quantity); // 最低1個に制限
+            session()->put('cart', $cart);
+        }
+
+        //合計計算
+        $total = 0;
+        foreach ($cart as $item) {
+            $total += $item['price'] * $item['quantity'];
+        }
+
+        return response()->json([
+            'success' => true,
+            'subtotal' => $cart[$id]['price'] * $cart[$id]['quantity'],
+            'total' => $total
+        ]);
+    }
+
+    //【追加】購入処理（カートクリア）
+    public function purchase(Request $request)
+    {
+        session()->forget('cart');
+        return response()->json(['success' => true]);
     }
 }
