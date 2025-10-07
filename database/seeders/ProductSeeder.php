@@ -10,6 +10,8 @@ class ProductSeeder extends Seeder
 {
     public function run(): void
     {
+        // ブランドコンセプト：
+        // Blueveil ― 海の恵みで、あなたの肌と心に透明な潤いを。
         Product::create([
             'name' => 'Blueveil Aqua Essence Lotion',
             'price' => 3800,
@@ -75,12 +77,75 @@ class ProductSeeder extends Seeder
         ]);
 
         Product::create([
-            'name' => 'Blueveil Aqua Rich Body Cream',
-            'price' => 3400,
-            'category' => 'バス',
-            'image' => 'bodycream.png',
-            'description' => '濃厚な潤いで、贅沢なボディケア体験を。',
+            'name' => 'Blueveil Marine Fresh Body Wash',
+            'price' => 2800,
+            'category' => 'ボディケア',
+            'image' => 'bodywash.png',
+            'description' => '朝の海風のように、肌を澄ませるバスタイムを。',
         ]);
 
+        Product::create([
+            'name' => 'Blueveil Ocean Relax Bath Salt',
+            'price' => 2200,
+            'category' => 'ボディケア',
+            'image' => 'bathsalt.png',
+            'description' => '海のミネラルが、心と肌をやさしく包み込む。',
+        ]);
+
+        Product::create([
+            'name' => 'Blueveil Aqua Hand Essence',
+            'price' => 1600,
+            'category' => 'ハンドケア',
+            'image' => 'handcream.png',
+            'description' => '指先に、透明なうるおいとやわらかな香りを。',
+        ]);
+
+        Product::create([
+            'name' => 'Blueveil Deep Sea Eye Concentrate',
+            'price' => 3200,
+            'category' => 'フェイスケア',
+            'image' => 'eyecream.png',
+            'description' => '深海の潤いが、まなざしに光を宿す。',
+        ]);
+
+        Product::create([
+            'name' => 'Blueveil Marine Lip Essence',
+            'price' => 1400,
+            'category' => 'リップケア',
+            'image' => 'Lip.png',
+            'description' => '潤いがとけこむ、海のようなツヤめき唇へ。',
+        ]);
+
+        Product::create([
+            'name' => 'Blueveil Aqua Smooth Peeling Gel',
+            'price' => 2900,
+            'category' => 'フェイスケア',
+            'image' => 'peelinggel.png',
+            'description' => 'くすみをやさしくオフして、波間のような透明肌へ。',
+        ]);
+
+        Product::create([
+            'name' => 'Blueveil Marine Revitalizing Shampoo',
+            'price' => 2600,
+            'category' => 'ヘアケア',
+            'image' => 'shampoo.png',
+            'description' => '髪に海風の息吹を。フローラルが香る癒しのひととき。',
+        ]);
+
+        Product::create([
+            'name' => 'Blueveil Marine Deep Nourish Conditioner',
+            'price' => 2600,
+            'category' => 'ヘアケア',
+            'image' => 'linse.png',
+            'description' => '海の恵みで髪を包み、しなやかで艶やかな指通りへ。',
+        ]);
+
+        Product::create([
+            'name' => 'Blueveil Marine Ocean Relax Bath Oil',
+            'price' => 3100,
+            'category' => 'ボディケア',
+            'image' => 'bathoil.png',
+            'description' => '深海の香りに満たされる、静かな癒しのバスタイム。',
+        ]);
     }
 }
