@@ -14,7 +14,9 @@
         {{-- ナビゲーション --}}
         <!-- ナビゲーションバー -->
         <header class="navbar">
-            <div class="nav-logo">AquaLuce</div>
+            <div class="nav-logo">
+                <a href="/">AquaLuce</a>
+            </div>
             <nav>
                 <ul class="nav-links">
                     <li><a href="/">Home</a></li>

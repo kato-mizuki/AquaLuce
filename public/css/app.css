@@ -17,9 +17,22 @@
     .nav-logo {
         font-family: 'Playfair Display', serif;
         font-size: 1.8rem;
-        color: #00A8E8;
         font-weight: bold;
         flex-shrink: 0; /* ロゴは縮まない */
+    }
+    .nav-logo a{
+        color: #00A8E8;
+        text-decoration: none; /* 下線を消す */
+    }
+    /* ホバー時（マウスを乗せた時）のリンク */
+    a:hover {
+        color: #1d6fa5;        /* ホバー時の色を指定 */
+        text-decoration: none; /* 下線は出さない */
+    }
+
+    /* クリック済み（visited）のリンク色 */
+    a:visited {
+        color: #00A8E8;        /* 遷移後のリンク色 */
     }
 
     .nav-links {
