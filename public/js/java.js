@@ -19,13 +19,15 @@ document.addEventListener("DOMContentLoaded", function() {
   });
 });
 
-//商品カードのアニメーション設定
+// 商品カードのアニメーション設定 + ボタン操作
 document.addEventListener('DOMContentLoaded', function() {
   const cards = Array.from(document.querySelectorAll('.product-card'));
   const cardsPerPage = 3;
   let currentIndex = 0;
   const intervalTime = 5000; // 5秒ごとに切り替え
+  let autoSlide;
 
+  // 表示更新
   function showCards() {
     cards.forEach((card, i) => {
       card.classList.remove('active');
@@ -39,11 +41,46 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   }
 
+  // 次へ
   function nextSlide() {
     currentIndex = (currentIndex + cardsPerPage) % cards.length;
     showCards();
   }
 
+  // 前へ
+  function prevSlide() {
+    currentIndex = (currentIndex - cardsPerPage + cards.length) % cards.length;
+    showCards();
+  }
+
+  // 自動スライド
+  function startAutoSlide() {
+    autoSlide = setInterval(nextSlide, intervalTime);
+  }
+
+  function resetAutoSlide() {
+    clearInterval(autoSlide);
+    startAutoSlide();
+  }
+
+  // ボタンイベント
+  const nextBtn = document.querySelector('.next-btn');
+  const prevBtn = document.querySelector('.prev-btn');
+
+  if (nextBtn) {
+    nextBtn.addEventListener('click', () => {
+      nextSlide();
+      resetAutoSlide();
+    });
+  }
+
+  if (prevBtn) {
+    prevBtn.addEventListener('click', () => {
+      prevSlide();
+      resetAutoSlide();
+    });
+  }
+
   showCards();
-  setInterval(nextSlide, intervalTime);
+  startAutoSlide();
 });

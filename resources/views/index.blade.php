@@ -19,54 +19,58 @@
     <!-- Products Section -->
     <section id="products" class="products">
         <h2 class="section-title">Our Products</h2>
-        <div class="product-cards">
-            <div class="product-card">
-                <img src="{{ asset('img/lotion.png') }}" alt="Aqua Essence Lotion">
-                <h3>Blueveil Aqua Essence Lotion</h3>
-                <p>ひとしずくで、海の潤いをそのままに。</p>
-                <a href="#" class="btn">Buy Now</a>
-            </div>
-            <div class="product-card">
-                <img src="{{ asset('img/serum.png') }}" alt="Marine Glow Serum">
-                <h3>Blueveil Marine Glow Serum</h3>
-                <p>光をまとう、なめらかな素肌へ。</p>
-                <a href="#" class="btn">Buy Now</a>
-            </div>
-            <div class="product-card">
-                <img src="{{ asset('img/cream.png') }}" alt="Deep Ocean Cream">
-                <h3>Blueveil Deep Ocean Cream</h3>
-                <p>深い海のやすらぎで、翌朝の肌に違いを。</p>
-                <a href="#" class="btn">Buy Now</a>
-            </div>
-            <div class="product-card">
-                <img src="{{ asset('img/cleansing.png') }}" alt="Pure Cleansing Gel">
-                <h3>Blueveil Aqua Pure Cleansing Gel</h3>
-                <p>洗浄後の肌に清潔感や透明感を。</p>
-                <a href="#" class="btn">Buy Now</a>
-            </div>
-            <div class="product-card">
-                <img src="{{ asset('img/sheetmask.png') }}" alt="Aqua Revital Mask">
-                <h3>Blueveil Aqua Revital Mask</h3>
-                <p>肌に集中ケアで潤いと活力を与える。</p>
-                <a href="#" class="btn">Buy Now</a>
-            </div>
-            <div class="product-card">
-                <img src="{{ asset('img/suncut.png') }}" alt="Clear Sea UV Fluid">
-                <h3>Blueveil Clear Sea UV Fluid</h3>
-                <p>白浮きせず透明感のある仕上がりを。</p>
-                <a href="#" class="btn">Buy Now</a>
-            </div>
-            <div class="product-card">
-                <img src="{{ asset('img/hairoil.png') }}" alt="Marine Gloss Hair Oil">
-                <h3>Blueveil Marine Gloss Hair Oil</h3>
-                <p>髪に輝くツヤを。</p>
-                <a href="#" class="btn">Buy Now</a>
-            </div>
-            <div class="product-card">
-                <img src="{{ asset('img/bodycream.png') }}" alt="Aqua Rich Body Cream">
-                <h3>Blueveil Aqua Rich Body Cream</h3>
-                <p>濃厚な潤いや贅沢な使用感を。</p>
-                <a href="#" class="btn">Buy Now</a>
+        <div class="product-slider">
+                <button class="prev-btn">‹</button>
+            <div class="product-cards">
+                <div class="product-card">
+                    <img src="{{ asset('img/lotion.png') }}" alt="Aqua Essence Lotion">
+                    <h3>Blueveil Aqua Essence Lotion</h3>
+                    <p>ひとしずくで、海の潤いをそのままに。</p>
+                    <a href="#" class="btn">Buy Now</a>
+                </div>
+                <div class="product-card">
+                    <img src="{{ asset('img/serum.png') }}" alt="Marine Glow Serum">
+                    <h3>Blueveil Marine Glow Serum</h3>
+                    <p>光をまとう、なめらかな素肌へ。</p>
+                    <a href="#" class="btn">Buy Now</a>
+                </div>
+                <div class="product-card">
+                    <img src="{{ asset('img/cream.png') }}" alt="Deep Ocean Cream">
+                    <h3>Blueveil Deep Ocean Cream</h3>
+                    <p>深い海のやすらぎで、翌朝の肌に違いを。</p>
+                    <a href="#" class="btn">Buy Now</a>
+                </div>
+                <div class="product-card">
+                    <img src="{{ asset('img/cleansing.png') }}" alt="Pure Cleansing Gel">
+                    <h3>Blueveil Aqua Pure Cleansing Gel</h3>
+                    <p>洗浄後の肌に清潔感や透明感を。</p>
+                    <a href="#" class="btn">Buy Now</a>
+                </div>
+                <div class="product-card">
+                    <img src="{{ asset('img/sheetmask.png') }}" alt="Aqua Revital Mask">
+                    <h3>Blueveil Aqua Revital Mask</h3>
+                    <p>肌に集中ケアで潤いと活力を与える。</p>
+                    <a href="#" class="btn">Buy Now</a>
+                </div>
+                <div class="product-card">
+                    <img src="{{ asset('img/suncut.png') }}" alt="Clear Sea UV Fluid">
+                    <h3>Blueveil Clear Sea UV Fluid</h3>
+                    <p>白浮きせず透明感のある仕上がりを。</p>
+                    <a href="#" class="btn">Buy Now</a>
+                </div>
+                <div class="product-card">
+                    <img src="{{ asset('img/hairoil.png') }}" alt="Marine Gloss Hair Oil">
+                    <h3>Blueveil Marine Gloss Hair Oil</h3>
+                    <p>髪に輝くツヤを。</p>
+                    <a href="#" class="btn">Buy Now</a>
+                </div>
+                <div class="product-card">
+                    <img src="{{ asset('img/bodycream.png') }}" alt="Aqua Rich Body Cream">
+                    <h3>Blueveil Aqua Rich Body Cream</h3>
+                    <p>濃厚な潤いや贅沢な使用感を。</p>
+                    <a href="#" class="btn">Buy Now</a>
+                </div>
+                <button class="next-btn">›</button>
             </div>
         </div>
     </section>

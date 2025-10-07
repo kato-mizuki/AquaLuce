@@ -126,6 +126,7 @@
         flex-wrap: wrap;
         transition: opacity 1s ease-in-out;
         opacity: 1;
+        overflow: hidden;
     }
     .product-cards.fade-out {
         opacity: 0;
@@ -133,19 +134,21 @@
     .product-card {
         background: #fff;
         border-radius: 20px;
-        padding: 20px;
-        width: 280px;
+        padding-bottom: 20px;
+        min-width: 250px;
         box-shadow: 0 10px 20px rgba(0,0,0,0.1);
         transition: transform 1s ease, opacity 1.5s ease, box-shadow 0.3s;
         opacity: 0;
         transform: scale(1);
+        flex: 0 0 calc(33.333% - 20px); /* 3商品表示用 */
+        max-width: 570px;
     }
     .product-card.active {
         opacity: 1;
         transform: scale(1);
     }
     .product-card img {
-        width: 100%;
+        width: 50%;
         border-radius: 15px;
         margin-bottom: 15px;
     }
@@ -182,6 +185,31 @@
     .product-card:hover {
         transform: translateY(-5px);
         box-shadow: 0 15px 25px rgba(0,0,0,0.15);
+    }
+    .product-slider {
+        position: relative;
+        width: 100%;
+        overflow: hidden; /* はみ出した商品を隠す */
+    }
+    .prev-btn, .next-btn {
+        position: absolute;
+        bottom: 50%;
+        transform: translateY(-50%);
+        background: rgba(0,168,232,0.7);
+        color: #fff;
+        border: none;
+        padding: 10px 20px;
+        cursor: pointer;
+        font-size: 1.5rem;
+        border-radius: 50%;
+        z-index: 10;
+    }
+
+    .prev-btn { 
+        left: 0; 
+    }
+    .next-btn { 
+        right: 0; 
     }
 
     /* レスポンシブ */
