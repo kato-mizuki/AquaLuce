@@ -103,7 +103,6 @@
   padding: 10px 25px;
   cursor: pointer;
   transition: background-color 0.3s;
-  margin-top: 40px;
 }
 
 .add-to-cart:hover {
@@ -111,9 +110,11 @@
 }
 
 .back-btn {
-  margin-left: 15px;
   background-color: #ccc;
   color: #333;
+  margin-top: 20px;
+  margin-left: 0;
+  padding: 10px 25px;
 }
 
 .back-btn:hover {
