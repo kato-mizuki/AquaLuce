@@ -85,7 +85,7 @@ document.addEventListener('DOMContentLoaded', function() {
   startAutoSlide();
 });
 //カート内計算設定
-ocument.querySelectorAll('.quantity').forEach(input => {
+document.querySelectorAll('.quantity').forEach(input => {
   input.addEventListener('input', () => {
     const id = input.dataset.id;
     const quantity = input.value;
