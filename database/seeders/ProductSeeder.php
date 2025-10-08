@@ -108,7 +108,7 @@ class ProductSeeder extends Seeder
             'name' => 'Blueveil Deep Sea Sleeping Mask',
             'price' => 6500,
             'category' => 'スキンケア',
-            'image' => 'skincare/cream.png',
+            'image' => 'skincare/mask.png',
             'description' => '寝ている間に肌を集中的にケアするジェル状マスク。',
         ]);
         // オールインワンジェル

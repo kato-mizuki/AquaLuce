@@ -19,14 +19,15 @@ class CartController extends Controller
     {
         $product = Product::findOrFail($id);
         $cart = session()->get('cart', []);
+        $quantity = max(1, (int) $request->input('quantity', 1)); // 数量指定を反映
 
         if (isset($cart[$id])) {
-            $cart[$id]['quantity']++;
+            $cart[$id]['quantity'] += $quantity;
         } else {
             $cart[$id] = [
                 'name' => $product->name,
                 'price' => $product->price,
-                'quantity' => 1,
+                'quantity' => $quantity,
                 'image' => $product->image,
             ];
         }
