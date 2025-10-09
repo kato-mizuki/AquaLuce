@@ -57,8 +57,7 @@
   align-items: center;
   justify-content: center; /* ← 横方向の中央寄せ */
   padding: 60px;
-  max-width: 1000px; /* ページ幅の制限（中央に収まるように） */
-  margin: 10% auto; /* ← ページ中央寄せ */
+  
   background: linear-gradient(135deg, #f0f8ff, #a2d2ff);
   border-radius: 20px;
   box-shadow: 0 4px 15px rgba(0,0,0,0.1);
@@ -68,8 +67,10 @@
   width: 400px;
   border-radius: 20px;
   object-fit: cover;
+  margin: 10% 0; /* ← ページ中央寄せ */
   box-shadow: 0 4px 15px rgba(0,0,0,0.15);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background-color: #fff;
 }
 
 .product-detail img:hover {
@@ -79,6 +80,7 @@
 
 .product-info {
   flex: 1;
+  margin: 10% 0; /* ← ページ中央寄せ */
   max-width: 500px; /* 情報部分の幅を制限してバランスを取る */
 }
 

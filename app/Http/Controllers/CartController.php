@@ -18,23 +18,26 @@ class CartController extends Controller
     public function add(Request $request, $id)
     {
         $product = Product::findOrFail($id);
-        $cart = session()->get('cart', []);
-        $quantity = max(1, (int) $request->input('quantity', 1)); // 数量指定を反映
+        $quantity = $request->input('quantity', 1);
 
-        if (isset($cart[$id])) {
+        $cart = session()->get('cart', []);
+        if(isset($cart[$id])){
             $cart[$id]['quantity'] += $quantity;
         } else {
             $cart[$id] = [
-                'name' => $product->name,
-                'price' => $product->price,
-                'quantity' => $quantity,
-                'image' => $product->image,
+                "name" => $product->name,
+                "quantity" => $quantity,
+                "price" => $product->price,
+                "image" => $product->image
             ];
         }
 
         session()->put('cart', $cart);
-        return redirect()->back()->with('success', '商品をカートに追加しました！');
+
+        // カートページに遷移
+        return redirect()->route('cart.index')->with('success', 'カートに追加しました！');
     }
+
 
     //カートから削除
     public function remove(Request $request, $id)
