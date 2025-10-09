@@ -38,10 +38,12 @@
             </div>
             <button class="next-btn">›</button>
         </div>
-        <!-- 商品詳細ページへのリンクに変更 -->
-        <a href="{{ route('products.index')}}" class="product-btn">
-            All Products
-        </a>
+        <div class="productsbtn">
+            <!-- 商品詳細ページへのリンクに変更 -->
+            <a href="{{ route('products.index')}}" class="btn">
+                All Products
+            </a>
+        </div>
     </section>
 
     <!-- Before / After Section -->

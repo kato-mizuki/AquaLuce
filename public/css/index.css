@@ -192,7 +192,7 @@
         width: 100%;
         overflow: hidden; /* はみ出した商品を隠す */
     }
-    .product-btn{
+    .productsbtn .btn{
         display: inline-block;
         padding: 10px 25px;
         border-radius: 30px;
@@ -203,12 +203,13 @@
         transition: all 0.3s;
         margin: 30px;
     }
-    .product-card .product-btn:hover {
+    .productsbtn .btn:hover {
         background: #00A8E8;
     }
-    .product-card a:visited {
+    .productsbtn a:visited {
         color: #fff;
     }
+    
     .prev-btn, .next-btn {
         position: absolute;
         bottom: 50%;
