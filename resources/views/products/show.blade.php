@@ -20,15 +20,30 @@
 
     <a href="{{ route('products.index') }}" class="btn back-btn">一覧へ戻る</a>
   </div>
-  <div class="reviews">
-    <h3>レビュー</h3>
+</section>
+<div class="reviews">
+  <h3>レビュー</h3>
+
+  @if ($product->reviews->count() > 0)
     @foreach ($product->reviews as $review)
       <div class="review-card">
-        <strong>{{ $review->reviewer_name }}</strong>
-        <span>（★{{ $review->rating }}）</span>
-        <p>{{ $review->comment }}</p>
+        <div class="review-header">
+          <strong class="reviewer">{{ $review->reviewer_name }}</strong>
+          <div class="rating">
+            @for ($i = 0; $i < 5; $i++)
+              @if ($i < $review->rating)
+                <span class="star filled">★</span>
+              @else
+                <span class="star">☆</span>
+              @endif
+            @endfor
+          </div>
+        </div>
+        <p class="review-comment">{{ $review->comment }}</p>
       </div>
     @endforeach
-  </div>
-</section>
+  @else
+    <p>まだレビューはありません。</p>
+  @endif
+</div>
 @endsection

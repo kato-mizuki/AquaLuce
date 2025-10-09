@@ -133,3 +133,80 @@
 .back-btn:hover {
   background-color: #aaa;
 }
+/* レビューセクション全体 */
+.reviews {
+  margin-top: 60px;
+  padding: 40px 30px;
+  background-color: #f0f7fe; /* 淡い水色系背景 */
+  border-radius: 20px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+}
+
+/* 見出し */
+.reviews h3 {
+  font-size: 1.6rem;
+  margin-bottom: 30px;
+  color: #014f9a; /* 濃い青寄りのアクセント色 */
+  text-align: center;
+  position: relative;
+}
+
+.reviews h3::after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 3px;
+  background-color: #00adef; /* ロゴカラーの青を使うハイライト */
+  margin: 8px auto 0;
+  border-radius: 2px;
+}
+
+/* 各レビューカード */
+.review-card {
+  background-color: #ffffff;
+  border: 1px solid #dfe9f3; /* 淡い青グレー系の枠色 */
+  border-radius: 15px;
+  padding: 20px;
+  margin-bottom: 20px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.review-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+}
+
+/* ヘッダー部分（レビュアー名＋星評価） */
+.review-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.reviewer {
+  font-weight: 600;
+  color: #014f9a;
+  font-size: 1.1rem;
+}
+
+.rating {
+  font-size: 1.2rem;
+}
+
+/* 星（★☆） */
+.star {
+  color: #cddfe9; /* 灰色寄りの目立たない星（未選択） */
+  margin-right: 2px;
+}
+
+.star.filled {
+  color: #00adef; /* ロゴの青を使う塗りつぶし星 */
+}
+
+/* コメント部分 */
+.review-comment {
+  line-height: 1.8;
+  color: #4a4a4a;
+  font-size: 0.95rem;
+}
