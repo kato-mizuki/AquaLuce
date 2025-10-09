@@ -1,0 +1,125 @@
+/* カート画面全体 */
+    .cart-container {
+        max-width: 900px;
+        margin: 50px auto;
+        padding: 30px;
+        background: #EAF9FB; /* 全体セクション背景に合わせる */
+        border-radius: 20px;
+        box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    }
+
+    /* テーブルのラッパー */
+    .cart-table-wrapper {
+        overflow-x: auto;
+    }
+
+    /* テーブル */
+    .cart-table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-bottom: 20px;
+    }
+
+    .cart-table th, .cart-table td {
+        padding: 12px 15px;
+        text-align: center;
+        border-bottom: 1px solid #ddd;
+    }
+
+    .cart-table th {
+        background: #00A8E8; /* 既存のセクションカラー */
+        color: #fff;
+        font-weight: bold;
+        border-radius: 10px 10px 0 0;
+    }
+
+    /* 商品情報セル */
+    .product-info {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+    }
+
+    .product-img {
+        width: 60px;
+        height: 60px;
+        object-fit: cover;
+        border-radius: 12px;
+    }
+
+    .product-name {
+        font-weight: 500;
+    }
+
+    /* ボタン */
+    .btn-remove {
+        background: #f44336;
+        color: #fff;
+        padding: 8px 18px;
+        border-radius: 30px;
+        font-weight: bold;
+        transition: all 0.3s;
+    }
+
+    .btn-remove:hover {
+        background: #d32f2f;
+    }
+
+    .btn-checkout {
+        background: #00A8E8;
+        color: #fff;
+        padding: 12px 30px;
+        border-radius: 30px;
+        font-weight: bold;
+        margin-bottom: 15px;
+    }
+
+    .btn-checkout:hover {
+        background: #00C0FF;
+    }
+
+    .btn-back {
+        background: #6ECEDA;
+        color: #fff;
+        padding: 10px 25px;
+        border-radius: 30px;
+        text-decoration: none;
+        display: inline-block;
+        transition: all 0.3s;
+    }
+
+    .btn-back:hover {
+        background: #00A8E8;
+    }
+
+    /* 合計金額 */
+    .cart-summary {
+        text-align: right;
+        margin-bottom: 20px;
+    }
+
+    .total-price {
+        font-size: 22px;
+        font-weight: bold;
+        color: #00796b;
+    }
+
+    /* 空カートメッセージ */
+    .empty-cart {
+        text-align: center;
+        font-size: 18px;
+        color: #333;
+    }
+
+    /* アラート */
+    .alert {
+        padding: 10px 15px;
+        border-radius: 30px;
+        margin-bottom: 20px;
+        text-align: center;
+    }
+
+    .alert-success {
+        background-color: #d0f8ce;
+        color: #2e7d32;
+    }
