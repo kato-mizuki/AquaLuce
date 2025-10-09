@@ -20,5 +20,15 @@
 
     <a href="{{ route('products.index') }}" class="btn back-btn">一覧へ戻る</a>
   </div>
+  <div class="reviews">
+    <h3>レビュー</h3>
+    @foreach ($product->reviews as $review)
+      <div class="review-card">
+        <strong>{{ $review->reviewer_name }}</strong>
+        <span>（★{{ $review->rating }}）</span>
+        <p>{{ $review->comment }}</p>
+      </div>
+    @endforeach
+  </div>
 </section>
 @endsection
