@@ -4,26 +4,35 @@
 <section class="product-detail">
   <img src="{{ asset('img/' . $product->image) }}" alt="{{ $product->name }}">
   <div class="product-info">
-    <h2>{{ $product->name }}</h2>
-    <p class="price">¥{{ number_format($product->price) }}</p>
-    <p class="desc">{{ $product->description }}</p>
+    <!-- 上段：商品名と金額を横並び -->
+    <div class="product-header">
+      <h2>{{ $product->name }}</h2>
+      <p class="price">¥{{ number_format($product->price) }}</p>
+    </div>
 
-    <!-- カート追加フォーム -->
-    <form action="{{ route('cart.add', ['id' => $product->id]) }}" method="POST">
-      @csrf
-      <div class="quantity-wrapper">
-        <label for="quantity">数量：</label>
-        <input type="number" name="quantity" id="quantity" value="1" min="1">
+    <!-- 下段：説明と数量＋ボタンを横並び -->
+    <div class="product-lower">
+      <p class="desc">{{ $product->description }}</p>
+
+      <div class="action-area">
+        <form action="{{ route('cart.add', ['id' => $product->id]) }}" method="POST">
+          @csrf
+          <div class="quantity-wrapper">
+            <label for="quantity">数量：</label>
+            <input type="number" name="quantity" id="quantity" value="1" min="1">
+          </div>
+          <button type="submit" class="btn add-to-cart">カートに入れる</button>
+        </form>
+
+        <a href="{{ route('products.index') }}" class="btn back-btn">一覧へ戻る</a>
       </div>
-      <button type="submit" class="btn add-to-cart">カートに入れる</button>
-    </form>
-
-    <a href="{{ route('products.index') }}" class="btn back-btn">一覧へ戻る</a>
+    </div>
   </div>
 </section>
+
+<!-- レビュー -->
 <div class="reviews">
   <h3>レビュー</h3>
-
   @if ($product->reviews->count() > 0)
     @foreach ($product->reviews as $review)
       <div class="review-card">

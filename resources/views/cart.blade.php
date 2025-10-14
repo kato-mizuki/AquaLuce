@@ -17,7 +17,7 @@
                         <th>価格</th>
                         <th>数量</th>
                         <th>小計</th>
-                        <th>操作</th>
+                        <th></th>
                     </tr>
                 </thead>
                 <tbody>

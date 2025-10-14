@@ -1,125 +1,198 @@
-/* カート画面全体 */
-    .cart-container {
-        max-width: 900px;
-        margin: 50px auto;
-        padding: 30px;
-        background: #EAF9FB; /* 全体セクション背景に合わせる */
-        border-radius: 20px;
-        box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-    }
+/* ===============================
+   🛒 カートページ全体デザイン
+=============================== */
+.cart-container {
+  max-width: 900px;
+  margin: 10% auto auto;
+  padding: 50px 40px;
+  background: linear-gradient(135deg, #f0f8ff, #d4efff);
+  border-radius: 25px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+  font-family: "Hiragino Sans", "Helvetica Neue", sans-serif;
+}
 
-    /* テーブルのラッパー */
-    .cart-table-wrapper {
-        overflow-x: auto;
-    }
+/* 見出し */
+.cart-title {
+  text-align: center;
+  color: #014f9a;
+  font-size: 1.8rem;
+  margin-bottom: 40px;
+  position: relative;
+}
 
-    /* テーブル */
-    .cart-table {
-        width: 100%;
-        border-collapse: collapse;
-        margin-bottom: 20px;
-    }
+.cart-title::after {
+  content: "";
+  display: block;
+  width: 70px;
+  height: 3px;
+  background-color: #00adef;
+  margin: 10px auto 0;
+  border-radius: 3px;
+}
 
-    .cart-table th, .cart-table td {
-        padding: 12px 15px;
-        text-align: center;
-        border-bottom: 1px solid #ddd;
-    }
+/* ===============================
+   📦 テーブルデザイン
+=============================== */
+.cart-table-wrapper {
+  overflow-x: auto;
+}
 
-    .cart-table th {
-        background: #00A8E8; /* 既存のセクションカラー */
-        color: #fff;
-        font-weight: bold;
-        border-radius: 10px 10px 0 0;
-    }
+.cart-table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #fff;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+}
 
-    /* 商品情報セル */
-    .product-info {
-        display: flex;
-        align-items: center;
-        gap: 15px;
-    }
+.cart-table th, .cart-table td {
+  padding: 15px;
+  text-align: center;
+}
 
-    .product-img {
-        width: 60px;
-        height: 60px;
-        object-fit: cover;
-        border-radius: 12px;
-    }
+.cart-table th {
+  background: #00adef;
+  color: #fff;
+  font-weight: 600;
+  font-size: 1rem;
+}
 
-    .product-name {
-        font-weight: 500;
-    }
+.cart-table tr:nth-child(even) {
+  background-color: #f8fcff;
+}
 
-    /* ボタン */
-    .btn-remove {
-        background: #f44336;
-        color: #fff;
-        padding: 8px 18px;
-        border-radius: 30px;
-        font-weight: bold;
-        transition: all 0.3s;
-    }
+.cart-table td {
+  border-bottom: 1px solid #e3f1f9;
+}
 
-    .btn-remove:hover {
-        background: #d32f2f;
-    }
+/* 商品情報セル */
+.product-info {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  justify-content: center;
+}
 
-    .btn-checkout {
-        background: #00A8E8;
-        color: #fff;
-        padding: 12px 30px;
-        border-radius: 30px;
-        font-weight: bold;
-        margin-bottom: 15px;
-    }
+.product-img {
+  width: 70px;
+  height: 70px;
+  object-fit: cover;
+  border-radius: 15px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  background: #fff;
+}
 
-    .btn-checkout:hover {
-        background: #00C0FF;
-    }
+.product-name {
+  font-weight: 600;
+  color: #014f9a;
+}
 
-    .btn-back {
-        background: #6ECEDA;
-        color: #fff;
-        padding: 10px 25px;
-        border-radius: 30px;
-        text-decoration: none;
-        display: inline-block;
-        transition: all 0.3s;
-    }
+/* ===============================
+   🧾 合計・ボタン周り
+=============================== */
+.cart-summary {
+  text-align: right;
+  margin-top: 30px;
+  background: #ffffff;
+  padding: 20px 25px;
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
 
-    .btn-back:hover {
-        background: #00A8E8;
-    }
+.cart-summary h3 {
+  color: #014f9a;
+  font-size: 1.3rem;
+}
 
-    /* 合計金額 */
-    .cart-summary {
-        text-align: right;
-        margin-bottom: 20px;
-    }
+.total-price {
+  font-size: 1.6rem;
+  font-weight: bold;
+  color: #00adef;
+}
 
-    .total-price {
-        font-size: 22px;
-        font-weight: bold;
-        color: #00796b;
-    }
+/* ===============================
+   🩵 ボタンスタイル
+=============================== */
+.btn {
+  display: inline-block;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
 
-    /* 空カートメッセージ */
-    .empty-cart {
-        text-align: center;
-        font-size: 18px;
-        color: #333;
-    }
+.btn-remove {
+  background: #a2d2ff;
+  color: #014f9a;
+  padding: 8px 18px;
+  border-radius: 25px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
 
-    /* アラート */
-    .alert {
-        padding: 10px 15px;
-        border-radius: 30px;
-        margin-bottom: 20px;
-        text-align: center;
-    }
+.btn-remove:hover {
+  background: #00adef;
+  color: #fff;
+  transform: translateY(-1px);
+}
 
-    .alert-success {
-        background-color: #d0f8ce;
-        color: #2e7d32;
-    }
+
+.btn-checkout {
+  background: linear-gradient(135deg, #00adef, #3da9fc);
+  color: #fff;
+  padding: 12px 40px;
+  border-radius: 30px;
+  font-size: 1rem;
+  box-shadow: 0 4px 12px rgba(0,173,239,0.3);
+}
+
+.btn-checkout:hover {
+  background: linear-gradient(135deg, #0095d9, #00adef);
+  box-shadow: 0 6px 15px rgba(0,173,239,0.4);
+}
+
+.btn-back {
+  background: #b9e6ff;
+  color: #014f9a;
+  padding: 10px 30px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  display: inline-block;
+  margin-top: 20px;
+}
+
+.btn-back:hover {
+  background: #a2d2ff;
+  transform: translateY(-1px);
+}
+
+/* ===============================
+   ⚠️ アラート・空メッセージ
+=============================== */
+.alert {
+  padding: 12px 20px;
+  border-radius: 30px;
+  margin-bottom: 25px;
+  text-align: center;
+  font-weight: 600;
+}
+
+.alert-success {
+  background-color: #e0f9ef;
+  color: #047857;
+  border: 1px solid #a7f3d0;
+}
+
+.empty-cart {
+  text-align: center;
+  font-size: 1.1rem;
+  color: #555;
+  background-color: #fff;
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+  margin-top: 30px;
+}

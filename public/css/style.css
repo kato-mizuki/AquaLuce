@@ -51,6 +51,9 @@
 .products .product .btn:hover {
   background-color: #7bb9ff;
 }
+/* 
+  ここから商品詳細ページのデザイン設定 ↓
+*/
 .product-detail {
   display: flex;
   gap: 40px;
@@ -81,7 +84,7 @@
 .product-info {
   flex: 1;
   margin: 10% 0; /* ← ページ中央寄せ */
-  max-width: 500px; /* 情報部分の幅を制限してバランスを取る */
+  max-width: 700px; /* 情報部分の幅を制限してバランスを取る */
 }
 
 .product-info h2 {
@@ -99,15 +102,47 @@
   line-height: 1.8;
 }
 
-.quantity-wrapper {
+/* 上段：商品名と金額を横並び */
+.product-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
   margin-bottom: 20px;
 }
 
-.quantity-wrapper input {
-  width: 70px;
-  padding: 5px;
-  font-size: 1rem;
-  text-align: center;
+.product-header h2 {
+  font-size: 1.8rem;
+  color: #014f9a;
+}
+
+.product-header .price {
+  font-size: 1.5rem;
+  color: #333;
+  font-weight: bold;
+}
+
+/* 下段：説明とアクションを横並び */
+.product-lower {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 40px;
+}
+
+.product-lower .desc {
+  flex: 2;
+  line-height: 1.8;
+}
+
+.action-area {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.quantity-wrapper {
+  margin-bottom: 15px;
 }
 
 .add-to-cart {
@@ -118,6 +153,8 @@
   padding: 10px 25px;
   cursor: pointer;
   transition: background-color 0.3s;
+  width: 100%;
+  text-align: center;
 }
 
 .add-to-cart:hover {
@@ -127,14 +164,16 @@
 .back-btn {
   background-color: #ccc;
   color: #333;
-  margin-top: 20px;
-  margin-left: 0;
+  margin-top: 10px;
   padding: 10px 25px;
+  width: 100%;
+  text-align: center;
 }
 
 .back-btn:hover {
   background-color: #aaa;
 }
+
 /* レビューセクション全体 */
 .reviews {
   margin-top: 60px;
