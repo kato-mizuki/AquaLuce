@@ -15,7 +15,7 @@
         justify-content: center;
         text-align: center;
         color: #fff;
-        background: url('/img/back.png') center/cover no-repeat;
+        background: url('/img/back.png') center/cover no-repeat; /* 背景画像を追加 */
         overflow: hidden;
     }
 
