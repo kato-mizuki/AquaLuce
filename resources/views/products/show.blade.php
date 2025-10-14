@@ -1,35 +1,37 @@
 @extends('layouts.app')
 
 @section('content')
-<section class="product-detail">
-  <img src="{{ asset('img/' . $product->image) }}" alt="{{ $product->name }}">
-  <div class="product-info">
-    <!-- 上段：商品名と金額を横並び -->
-    <div class="product-header">
-      <h2>{{ $product->name }}</h2>
-      <p class="price">¥{{ number_format($product->price) }}</p>
-    </div>
+  <section class="product-detail">
+    <img src="{{ asset('img/' . $product->image) }}" alt="{{ $product->name }}">
+    <div class="product-info">
 
-    <!-- 下段：説明と数量＋ボタンを横並び -->
-    <div class="product-lower">
-      <p class="desc">{{ $product->description }}</p>
+      <!-- 上段：商品名と金額 -->
+      <div class="product-header">
+        <h2>{{ $product->name }}</h2>
+        <p class="price">¥{{ number_format($product->price) }}</p>
+      </div>
 
-      <div class="action-area">
-        <form action="{{ route('cart.add', ['id' => $product->id]) }}" method="POST">
+      <!-- 下段：説明と数量＋ボタン -->
+      <div class="product-lower">
+        <p class="desc">{{ $product->description }}</p>
+
+        <form action="{{ route('cart.add', ['id' => $product->id]) }}" method="POST" class="cart-form">
           @csrf
+
           <div class="quantity-wrapper">
             <label for="quantity">数量：</label>
             <input type="number" name="quantity" id="quantity" value="1" min="1">
           </div>
-          <button type="submit" class="btn add-to-cart">カートに入れる</button>
+
+          <div class="action-area">
+            <button type="submit" class="btn add-to-cart">カートに入れる</button>
+          </div>
         </form>
 
         <a href="{{ route('products.index') }}" class="btn back-btn">一覧へ戻る</a>
       </div>
     </div>
-  </div>
-</section>
-
+  </section>
 <!-- レビュー -->
 <div class="reviews">
   <h3>レビュー</h3>
