@@ -125,3 +125,32 @@ document.getElementById('purchaseBtn').addEventListener('click', () => {
     }
   });
 });
+// リロードせずにお気に入り登録
+document.addEventListener("DOMContentLoaded", () => {
+    document.querySelectorAll(".favorite-btn").forEach(btn => {
+        btn.addEventListener("click", async () => {
+            const productId = btn.dataset.id;
+
+            try {
+                const res = await fetch(`/favorites/toggle/${productId}`, {
+                    method: "POST",
+                    headers: {
+                        "X-CSRF-TOKEN": "{{ csrf_token() }}",
+                        "Accept": "application/json",
+                    },
+                });
+
+                const data = await res.json();
+
+                if (data.status === "added") {
+                    btn.classList.add("favorited");
+                } else if (data.status === "removed") {
+                    btn.classList.remove("favorited");
+                }
+
+            } catch (error) {
+                console.error("お気に入り切替エラー:", error);
+            }
+        });
+    });
+});

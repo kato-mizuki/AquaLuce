@@ -24,6 +24,7 @@
                 <ul class="nav-links">
                     <li><a href="/">Home</a></li>
                     <li><a href="{{ route('products.index') }}">Products</a></li>
+                    <li><a href="{{ route('favorites.index') }}">Favorites</a></li>
                     <li><a href="{{ route('cart.index') }}" id="purchaseBtn">Cart</a></li>
                 </ul>
             </nav>

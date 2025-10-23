@@ -16,12 +16,17 @@ class ProductController extends Controller
     public function index()
     {
         $products = Product::all();
-        return view('products.index', compact('products'));
+        // セッションから favorites 配列を取得（なければ空配列）
+        $favorites = session()->get('favorites', []);
+
+        // ビューに渡す
+        return view('products.index', compact('products', 'favorites'));
     }
 
     public function show($id)
     {
         $product = Product::findOrFail($id);
-        return view('products.show', compact('product'));
+        $favorites = session()->get('favorites', []);
+        return view('products.show', compact('product', 'favorites'));
     }
 }
