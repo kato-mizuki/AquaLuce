@@ -89,10 +89,13 @@
     transform: scale(1.2);
 }
 
+.favorite-actions a:visited{
+  color: #fff;
+}
+
 .favorite-btn i {
     pointer-events: none;
-    margin: auto;
-    padding: auto;
+    text-align: center;
 }
 
 .favorite-btn.favorited i {
@@ -101,4 +104,19 @@
 
 .favorite-btn:not(.favorited) i {
     color: #fff; /* 白ハート */
+}
+/* 商品詳細ページ用のお気に入りボタン設定 */
+.product-lower .favorite-btn {
+    position: unset;
+    background-color: transparent;
+    background-color: rgba(210, 231, 246, 0.7);
+    cursor: pointer;
+    font-size: 24px;
+    transition: transform 0.2s ease, color 0.2s ease;
+    top: 0;
+    right: 20%;
+}
+
+.product-lower .favorite-btn:not(.favorited) i {
+    color: #3da9fc; /* 白ハート */
 }

@@ -21,8 +21,10 @@
           <div class="quantity-wrapper">
             <label for="quantity">数量：</label>
             <input type="number" name="quantity" id="quantity" value="1" min="1">
+            <button type="button" class="favorite-btn {{ in_array($product->id, $favorites) ? 'favorited' : '' }}" data-id="{{ $product->id }}">
+              <i class="{{ in_array($product->id, $favorites) ? 'fas' : 'far' }} fa-heart"></i>
+            </button>
           </div>
-
           <div class="action-area">
             <button type="submit" class="btn add-to-cart">カートに入れる</button>
           </div>

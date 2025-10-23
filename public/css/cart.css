@@ -152,6 +152,9 @@
   box-shadow: 0 6px 15px rgba(0,173,239,0.4);
 }
 
+.cart-summary a:visited{
+  color: #fff;
+}
 .btn-back {
   background: #b9e6ff;
   color: #014f9a;
