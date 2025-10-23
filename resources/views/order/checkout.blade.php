@@ -1,8 +1,8 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container py-5">
-    <h2 class="mb-4">ご注文情報の入力</h2>
+<div class="checkout-container">
+    <h2>ご注文情報の入力</h2>
 
     <form action="{{ route('order.store') }}" method="POST">
         @csrf
@@ -36,6 +36,7 @@
         <table class="table mt-3">
             <thead>
                 <tr>
+                    <th></th>
                     <th>商品名</th>
                     <th>単価</th>
                     <th>数量</th>
@@ -45,6 +46,7 @@
             <tbody>
                 @foreach($cart as $item)
                     <tr>
+                        <td><img src="{{ asset('img/' . $item['image']) }}" alt="{{ $item['name'] }}" class="product-img"></td>
                         <td>{{ $item['name'] }}</td>
                         <td>¥{{ number_format($item['price']) }}</td>
                         <td>{{ $item['quantity'] }}</td>
@@ -54,12 +56,13 @@
             </tbody>
         </table>
 
-        <div class="text-end fw-bold mt-3">
+        <div class="fw-bold">
             合計金額：¥{{ number_format($total) }}
         </div>
 
         <div class="mt-4 text-center">
-            <button type="submit" class="btn btn-success px-4 py-2">注文を確定する</button>
+            <a href="{{ route('home') }}" class="btn btn-back">TOPページに戻る</a>
+            <button type="submit" class="btn btn-success">注文を確定する</button>
         </div>
     </form>
 </div>
