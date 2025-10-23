@@ -37,7 +37,7 @@
   color: #555;
   margin-bottom: 10px;
 }
-
+/* ボタン（お気に入り・商品詳細）設定 */
 .products .product .btn {
   display: inline-block;
   padding: 10px 20px;

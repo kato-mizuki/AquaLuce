@@ -10,14 +10,14 @@
             <div class="product-grid">
                 @foreach($products as $product)
                     <div class="product">
-                        <img src="{{ asset('storage/' . $product->image) }}" alt="{{ $product->name }}">
+                        <img src="{{ asset('img/' . $product->image) }}" alt="{{ $product->name }}">
                         <h3>{{ $product->name }}</h3>
                         <p>¥{{ number_format($product->price) }}</p>
 
                         <div class="favorite-actions">
-                            <form action="{{ route('favorites.remove', $product->id) }}" method="POST">
+                            <form class="favorite-remove-form" data-id="{{ $product->id }}">
                                 @csrf
-                                <button type="submit" class="btn-remove">お気に入り解除</button>
+                                <button type="button" class="btn-remove">お気に入り解除</button>
                             </form>
                             <a href="{{ route('products.show', $product->id) }}" class="btn-detail">商品詳細へ</a>
                         </div>

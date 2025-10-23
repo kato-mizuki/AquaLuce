@@ -125,32 +125,37 @@ document.getElementById('purchaseBtn').addEventListener('click', () => {
     }
   });
 });
-// リロードせずにお気に入り登録
-document.addEventListener("DOMContentLoaded", () => {
-    document.querySelectorAll(".favorite-btn").forEach(btn => {
-        btn.addEventListener("click", async () => {
-            const productId = btn.dataset.id;
+// お気に入り機能設定
+document.addEventListener('DOMContentLoaded', function() {
+    const csrfToken = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
 
-            try {
-                const res = await fetch(`/favorites/toggle/${productId}`, {
-                    method: "POST",
-                    headers: {
-                        "X-CSRF-TOKEN": "{{ csrf_token() }}",
-                        "Accept": "application/json",
-                    },
-                });
+    document.querySelectorAll('.favorite-btn').forEach(btn => {
+        btn.addEventListener('click', function() {
+            const productId = this.dataset.id;
+            const isFavorited = this.classList.contains('favorited');
 
-                const data = await res.json();
+            const url = isFavorited
+                ? `/favorites/remove/${productId}`
+                : `/favorites/add/${productId}`;
 
-                if (data.status === "added") {
-                    btn.classList.add("favorited");
-                } else if (data.status === "removed") {
-                    btn.classList.remove("favorited");
+            fetch(url, {
+                method: 'POST',
+                headers: {
+                    'X-CSRF-TOKEN': csrfToken,
+                    'Accept': 'application/json',
+                    'Content-Type': 'application/json',
+                },
+            })
+            .then(res => res.ok ? res.json().catch(() => ({})) : Promise.reject())
+            .then(data => {
+                if ((data.status === 'added' && !isFavorited) || (data.status === 'removed' && isFavorited)) {
+                    this.classList.toggle('favorited');
+                    const icon = this.querySelector('i');
+                    icon.classList.toggle('fas');
+                    icon.classList.toggle('far');
                 }
-
-            } catch (error) {
-                console.error("お気に入り切替エラー:", error);
-            }
+            })
+            .catch(err => console.error('お気に入り更新失敗:', err));
         });
     });
 });

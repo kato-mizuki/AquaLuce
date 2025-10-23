@@ -1,5 +1,4 @@
 .favorites-container {
-  max-width: 1000px;
   margin: 60px auto;
   background: linear-gradient(135deg, #f0f8ff, #ffffff);
   border-radius: 20px;
@@ -75,22 +74,31 @@
 
 /* 商品一覧用の♡ボタン */
 .favorite-btn {
-  background: none;
-  border: none;
-  cursor: pointer;
-  font-size: 24px;
-  color: #ccc; /* 初期：灰色 */
-  transition: color 0.3s ease;
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    background-color: #a2d2ff;
+    border: black;
+    border-radius: 50%;
+    padding: 6px;
+    cursor: pointer;
+    font-size: 20px;
+    transition: transform 0.2s ease, color 0.2s ease;
+    margin-top: 2px;
 }
 
 .favorite-btn:hover {
-  color: #ff7b7b; /* ホバー時に少し赤く */
+    transform: scale(1.2);
 }
 
-.favorite-btn.favorited {
-  color: #ff3b3b; /* 追加済みは赤色 */
+.favorite-btn i {
+    pointer-events: none;
 }
 
-.favorite-btn:focus {
-  outline: none;
+.favorite-btn.favorited i {
+    color: #3da9fc; /* 水色ハート */
+}
+
+.favorite-btn:not(.favorited) i {
+    color: #fff; /* 白ハート */
 }
