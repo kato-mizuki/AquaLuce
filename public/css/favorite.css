@@ -80,11 +80,9 @@
     background-color: #a2d2ff;
     border: black;
     border-radius: 50%;
-    padding: 6px;
     cursor: pointer;
-    font-size: 20px;
+    font-size: 24px;
     transition: transform 0.2s ease, color 0.2s ease;
-    margin-top: 2px;
 }
 
 .favorite-btn:hover {
@@ -93,6 +91,8 @@
 
 .favorite-btn i {
     pointer-events: none;
+    margin: auto;
+    padding: auto;
 }
 
 .favorite-btn.favorited i {
