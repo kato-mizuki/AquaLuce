@@ -46,7 +46,7 @@
 
         <div class="cart-summary">
             <h3>合計金額: <span class="total-price">¥{{ number_format($total) }}</span></h3>
-            <button class="btn btn-checkout">購入手続きへ</button>
+            <a href="{{ route('order.checkout') }}" class="btn btn-checkout">購入手続きへ</a>
         </div>
 
         <a href="{{ route('products.index') }}" class="btn btn-back">お買い物を続ける</a>

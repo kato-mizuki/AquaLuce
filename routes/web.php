@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\OrderController;
 
 Route::get('/', [ProductController::class, 'home'])->name('home');
 Route::get('/cart', [CartController::class, 'index'])->name('cart.index');
@@ -12,4 +13,6 @@ Route::post('/cart/update', [CartController::class, 'updateQuantity'])->name('ca
 Route::post('/cart/purchase', [CartController::class, 'purchase'])->name('cart.purchase');
 Route::get('/products', [ProductController::class, 'index'])->name('products.index');
 Route::get('/products/{id}', [ProductController::class, 'show'])->name('products.show');
-Route::view('/thanks', 'thanks')->name('thanks');
+Route::get('/checkout', [OrderController::class, 'checkout'])->name('order.checkout');
+Route::post('/order/store', [OrderController::class, 'store'])->name('order.store');
+
