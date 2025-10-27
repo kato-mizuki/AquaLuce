@@ -1,36 +1,65 @@
 <!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+<html lang="ja">
     <head>
         <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="csrf-token" content="{{ csrf_token() }}">
+        <title>@yield('title', 'AquaLuce')</title>
 
-        <title>{{ config('app.name', 'Laravel') }}</title>
-
-        <!-- Fonts -->
-        <link rel="preconnect" href="https://fonts.bunny.net">
-        <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
-
-        <!-- Scripts -->
-        @vite(['resources/css/app.css', 'resources/js/app.js'])
+        {{-- CSS --}}
+        <link rel="stylesheet" href="{{ asset('css/auth.css') }}">
+        <link rel="stylesheet" href="{{ asset('css/index.css') }}">
+        <link rel="stylesheet" href="{{ asset('css/app.css') }}">
+        <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+        <link rel="stylesheet" href="{{ asset('css/cart.css') }}">
+        <link rel="stylesheet" href="{{ asset('css/order.css') }}">
+        <link rel="stylesheet" href="{{ asset('css/favorite.css') }}">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     </head>
-    <body class="font-sans antialiased">
-        <div class="min-h-screen bg-gray-100 dark:bg-gray-900">
-            @include('layouts.navigation')
+    <body>
+        {{-- ナビゲーション --}}
+        <!-- ナビゲーションバー -->
+        <header class="navbar">
+            <div class="nav-logo">
+                <a href="/">AquaLuce</a>
+            </div>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="/">Home</a></li>
+                    <li><a href="{{ route('products.index') }}">Products</a></li>
+                    <li><a href="{{ route('favorites.index') }}">Favorites</a></li>
+                    <li><a href="{{ route('cart.index') }}" id="purchaseBtn">Cart</a></li>
+                    <li><a href="{{ route('login') }}">Login</a></li>
+                </ul>
+            </nav>
+        </header>
 
-            <!-- Page Heading -->
-            @isset($header)
-                <header class="bg-white dark:bg-gray-800 shadow">
-                    <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
-                        {{ $header }}
-                    </div>
-                </header>
-            @endisset
+        {{-- ページ内容 --}}
+        <main>
+            @yield('content')
+        </main>
 
-            <!-- Page Content -->
-            <main>
-                {{ $slot }}
-            </main>
-        </div>
+        {{-- フッター --}}        
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="footer-inner">
+                <img src="{{ asset('img/logo.png') }}" alt="Blueveil Logo" class="footer-logo">
+                <ul class="footer-info">
+                    <li>営業時間<br>10:00 ~ 19:00</li>
+                    <li>所在地<br>東京都港区青山x-x-x</li>
+                    <li>TEL<br>03-xxxx-xxxx</li>
+                    <li>Mail<br>info@blueveil.com</li>
+                </ul>
+                <div class="footer-sns">
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fa-brands fa-tiktok"></i></a>
+                    <a href="#"><i class="fa-brands fa-square-x-twitter"></i></a>
+                </div>
+            </div>
+            <small class="copyright">© 2025 Blueveil. All Rights Reserved.</small>
+        </footer>
+
+        {{-- JS --}}
+        <script src="{{ asset('js/java.js') }}"></script>
     </body>
 </html>

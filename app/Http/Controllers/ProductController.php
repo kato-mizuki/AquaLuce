@@ -9,7 +9,7 @@ class ProductController extends Controller
     public function home()
     {
         // トップページ用
-        $products = Product::take(9)->get(); // 上位8商品
+        $products = Product::take(9)->get(); // 上位9商品
         return view('index', compact('products'));
     }
 
@@ -27,6 +27,10 @@ class ProductController extends Controller
     {
         $product = Product::findOrFail($id);
         $favorites = session()->get('favorites', []);
-        return view('products.show', compact('product', 'favorites'));
+        $reviews = $product->reviews()->with('user')->latest()->get();
+
+        // 商品詳細ページ（reviews付き）
+        return view('products.show', compact('product', 'favorites', 'reviews'));
     }
+
 }

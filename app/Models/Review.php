@@ -9,8 +9,9 @@ class Review extends Model
 {
 
     //
-    public function product()
+        public function user()
     {
-        return $this->belongsTo(Product::class);
+        return $this->belongsTo(User::class);
     }
+
 }

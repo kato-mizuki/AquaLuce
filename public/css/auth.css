@@ -1,0 +1,203 @@
+/* auth.css - AquaLuce ログイン・登録ページ専用 */
+/* 新規登録ページ専用 */
+#register-page {
+    background-color: #f5f8fa;
+    padding: 120px 20px 40px; /* ヘッダーと被らない余白 */
+    display: flex;
+    justify-content: center;
+}
+
+#register-page .register-container {
+    background-color: #ffffff;
+    padding: 40px 100px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+    width: 100%;
+    max-width: 420px;
+}
+
+#register-page .register-container h2 {
+    text-align: center;
+    margin-bottom: 25px;
+    font-family: 'Playfair Display', serif;
+    color: #00A8E8;
+    font-size: 1.8rem;
+    font-weight: bold;
+}
+
+#register-page .register-container label {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: 600;
+    color: #333;
+}
+
+#register-page .register-container input[type="text"],
+#register-page .register-container input[type="email"],
+#register-page .register-container input[type="password"] {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 18px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 1rem;
+    transition: border-color 0.3s;
+}
+
+#register-page .register-container input:focus {
+    border-color: #00A8E8;
+    outline: none;
+}
+
+#register-page .register-container button {
+    width: 100%;
+    padding: 14px;
+    background-color: #00A8E8;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    font-weight: bold;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#register-page .register-container button:hover {
+    background-color: #006C91;
+}
+
+#register-page .register-container p {
+    text-align: center;
+    margin-top: 20px;
+}
+
+#register-page .register-container p a {
+    color: #00A8E8;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+#register-page .register-container p a:hover {
+    color: #006C91;
+}
+
+#register-page .session-status,
+#register-page .validation-errors {
+    background-color: #ffe3e3;
+    color: #c92a2a;
+    padding: 12px;
+    border-radius: 6px;
+    margin-bottom: 18px;
+    font-size: 0.95rem;
+}
+/* レスポンシブ */
+@media (max-width: 768px) {
+    #register-page {
+        padding-top: 140px;
+    }
+
+    #register-page .register-container {
+        padding: 30px 20px;
+    }
+}
+/* ログインフォーム - 新規会員登録と統一 */
+/* ログインページ専用 */
+#login-page {
+    background-color: #f5f8fa;
+    padding: 120px 20px 40px; /* ヘッダーと被らない余白 */
+    display: flex;
+    justify-content: center;
+}
+
+#login-page .login-container {
+    background-color: #ffffff;
+    padding: 40px 100px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+    width: 100%;
+    max-width: 420px;
+}
+
+#login-page .login-container h2 {
+    text-align: center;
+    margin-bottom: 25px;
+    font-family: 'Playfair Display', serif;
+    color: #00A8E8;
+    font-size: 1.8rem;
+    font-weight: bold;
+}
+
+#login-page .login-container label {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: 600;
+    color: #333;
+}
+
+#login-page .login-container input[type="email"],
+#login-page .login-container input[type="password"] {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 18px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 1rem;
+    transition: border-color 0.3s;
+}
+
+#login-page .login-container input:focus {
+    border-color: #00A8E8;
+    outline: none;
+}
+
+#login-page .login-container button {
+    width: 100%;
+    padding: 14px;
+    background-color: #00A8E8;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    font-weight: bold;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#login-page .login-container button:hover {
+    background-color: #006C91;
+}
+
+#login-page .login-container p {
+    text-align: center;
+    margin-top: 20px;
+}
+
+#login-page .login-container p a {
+    color: #00A8E8;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+#login-page .login-container p a:hover {
+    color: #006C91;
+}
+
+#login-page .session-status,
+#login-page .validation-errors {
+    background-color: #ffe3e3;
+    color: #c92a2a;
+    padding: 12px;
+    border-radius: 6px;
+    margin-bottom: 18px;
+    font-size: 0.95rem;
+}
+/* ログインページのレスポンシブ */
+@media (max-width: 768px) {
+    #login-page {
+        padding-top: 140px;
+    }
+
+    #login-page .login-container {
+        padding: 30px 20px;
+    }
+}
