@@ -6,6 +6,7 @@ use App\Http\Controllers\ProductController;
 use App\Http\Controllers\OrderController;
 use App\Http\Controllers\FavoriteController;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\RegisterController;
 
 Route::get('/', [ProductController::class, 'home'])->name('home');
 Route::get('/cart', [CartController::class, 'index'])->name('cart.index');
@@ -30,3 +31,5 @@ Route::middleware('auth')->group(function () {
         return view('dashboard'); // ログイン後のページ
     })->name('dashboard');
 });
+Route::get('/register', [RegisterController::class, 'showRegistrationForm'])->name('register.form');
+Route::post('/register', [RegisterController::class, 'register'])->name('register');

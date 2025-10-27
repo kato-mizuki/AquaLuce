@@ -26,5 +26,6 @@
         </div>
         <button type="submit" class="btn btn-primary w-100">ログイン</button>
     </form>
+    <a href="{{ route('register.form')}}">まだ会員登録していない方はこちらから新規会員登録</a>
 </div>
 @endsection
