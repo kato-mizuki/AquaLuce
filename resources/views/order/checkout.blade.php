@@ -24,12 +24,25 @@
 
         <div class="mb-3">
             <label class="form-label">郵便番号</label>
-            <input type="text" name="postal_code" class="form-control" required>
+            <div class="postal-wrapper">
+            <input type="text" id="postal_code" name="postal_code" class="form-control" required>
+            <button type="button" id="auto_fill" class="btn btn-primary">住所自動入力</button>
+        </div>
         </div>
 
         <div class="mb-3">
-            <label class="form-label">住所</label>
-            <textarea name="address" class="form-control" required></textarea>
+            <label class="form-label">都道府県</label>
+            <input type="text" id="prefecture" name="prefecture" class="form-control" required>
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">市区町村</label>
+            <input type="text" id="city" name="city" class="form-control" required>
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">番地・建物名</label>
+            <input type="text" id="address" name="address" class="form-control">
         </div>
 
         <h4 class="mt-5">ご注文内容</h4>

@@ -62,21 +62,22 @@
                 <div class="ba-image-wrapper">
                     <img src="{{ asset('img/after.png') }}" alt="After Skin">
                 </div>
-            </div>
-        </div>
-
-        <div class="ba-effects">
-            <div class="effect-item">
-                <i class="fa-solid fa-droplet"></i>
-                <p>保湿</p>
-            </div>
-            <div class="effect-item">
-                <i class="fa-solid fa-sparkles"></i>
-                <p>透明感</p>
-            </div>
-            <div class="effect-item">
-                <i class="fa-solid fa-leaf"></i>
-                <p>ハリ</p>
+                <div class="ba-effects">
+                    <div class="effect-icons">
+                        <div class="effect-item">
+                            <i class="fas fa-tint"></i>
+                            <p>保湿</p>
+                        </div>
+                        <div class="effect-item">
+                            <i class="fas fa-gem"></i>
+                            <p>透明感</p>
+                        </div>
+                        <div class="effect-item">
+                            <i class="fas fa-leaf"></i>
+                            <p>ハリ</p>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>

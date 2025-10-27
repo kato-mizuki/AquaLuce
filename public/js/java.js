@@ -192,3 +192,23 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 });
+// 自動住所入力設定
+document.getElementById('auto_fill').addEventListener('click', function() {
+    const postal = document.getElementById('postal_code').value.replace('-', '');
+    if (!postal) return alert('郵便番号を入力してください');
+
+    // 郵便番号APIにリクエスト
+    fetch(`https://zipcloud.ibsnet.co.jp/api/search?zipcode=${postal}`)
+        .then(res => res.json())
+        .then(data => {
+            if (data.results) {
+                const result = data.results[0];
+                document.getElementById('prefecture').value = result.address1;
+                document.getElementById('city').value = result.address2;
+            } else {
+                alert('郵便番号から住所が見つかりませんでした');
+            }
+        })
+        .catch(() => alert('住所の自動取得に失敗しました'));
+});
+

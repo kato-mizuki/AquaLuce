@@ -246,49 +246,105 @@
     }
     }
 
-/* section(Before/Afterセクション)の設定 */
-    .before-after {
-        background: #ffffff;
-        padding: 60px 20px;
-        text-align: center;
-    }
+/* ========== Before & After Section ========== */
+.before-after-section {
+    padding: 60px 20px;
+    background-color: #f0f7fe; /* 淡い水色系背景 */
+    text-align: center;
+    border-radius: 20px;
+    margin: 40px 0;
+}
 
+.before-after-section .section-title {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #014f9a;
+    margin-bottom: 40px;
+    position: relative;
+}
+
+.before-after-section .section-title::after {
+    content: "";
+    display: block;
+    width: 80px;
+    height: 3px;
+    background-color: #00adef;
+    margin: 10px auto 0;
+    border-radius: 2px;
+}
+
+/* Before / Afterカードの横並び */
     .ba-container {
         display: flex;
         justify-content: center;
-        gap: 40px;
-        margin-bottom: 40px;
+        gap: 30px;
         flex-wrap: wrap;
+        margin-bottom: 40px;
     }
 
     .ba-card {
-        width: 300px;
-        text-align: center;
-    }
-
-    .ba-card img {
-        width: 100%;
+        background-color: #ffffff;
         border-radius: 15px;
-        box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+        padding: 20px;
+        width: 30%;
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
     }
 
+    .ba-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    }
+
+    .ba-card h3 {
+        font-size: 1.4rem;
+        color: #006C91;
+        margin-bottom: 15px;
+    }
+
+    .ba-image-wrapper img {
+        width: 100%;
+        border-radius: 12px;
+        object-fit: cover;
+    }
+
+    /* 効果アイコンセクション */
     .effect-icons {
         display: flex;
-        justify-content: center;
-        gap: 50px;
-        flex-wrap: wrap;
+        justify-content: space-around; /* アイコンを横に広げる */
+        align-items: flex-start;
+        flex-wrap: wrap; /* 小さい画面では折り返し */
+        margin-top: 30px;
+        width: 100%;
     }
 
     .effect-item {
-        text-align: center;
+        display: flex;
+        flex-direction: column; /* アイコンと文字は縦並び */
+        align-items: center;
+        width: 30%; /* 横幅固定で横に並びやすくする */
+        margin: 0; /* 横スペースを確保 */
         font-size: 1rem;
-        color: #00A8E8;
+        color: #006C91;
     }
 
     .effect-item i {
         font-size: 2rem;
-        margin-bottom: 10px;
+        color: #00adef;
+        margin-bottom: 8px;
     }
+
+    /* レスポンシブ */
+    @media (max-width: 768px) {
+        .effect-icons {
+            justify-content: center;
+            gap: 20px; /* 小さい画面では隙間を縮める */
+        }
+        .effect-item {
+            width: 100px; /* 横幅を少し縮小 */
+        }
+    }
+
 /* （Testimonialsセクション）の設定 */
     .testimonials {
         background: #EAF9FB; /* 淡い水色で癒し感 */
