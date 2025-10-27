@@ -159,3 +159,36 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 });
+// 星評価のJavaScript
+document.addEventListener('DOMContentLoaded', function() {
+    const stars = document.querySelectorAll('.stars .star');
+    const ratingInput = document.getElementById('rating');
+
+    stars.forEach((star, index) => {
+        // クリックで評価セット
+        star.addEventListener('click', function() {
+            const value = parseInt(this.dataset.value);
+            ratingInput.value = value;
+
+            stars.forEach((s, i) => {
+                s.textContent = i < value ? '★' : '☆';
+            });
+        });
+
+        // ホバー時に一時的に★にする
+        star.addEventListener('mouseover', function() {
+            const value = parseInt(this.dataset.value);
+            stars.forEach((s, i) => {
+                s.textContent = i < value ? '★' : '☆';
+            });
+        });
+
+        // ホバーアウトで実際の評価に戻す
+        star.addEventListener('mouseout', function() {
+            const currentValue = parseInt(ratingInput.value) || 0;
+            stars.forEach((s, i) => {
+                s.textContent = i < currentValue ? '★' : '☆';
+            });
+        });
+    });
+});

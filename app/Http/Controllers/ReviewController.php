@@ -3,26 +3,37 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
 use App\Models\Product;
 use App\Models\Review;
+use Illuminate\Support\Facades\Auth;
+
 
 class ReviewController extends Controller
 {
-    // __construct() を削除（またはコメントアウト）
+    // レビュー一覧ページ
+    public function show($productId)
+    {
+        $product = Product::with('reviews')->findOrFail($productId);
+        return view('review', compact('product'));
+    }
 
+    // 投稿処理
     public function store(Request $request, $productId)
     {
         $request->validate([
-            'content' => 'required|string|max:500',
+            'rating' => 'required|integer|min:1|max:5',
+            'comment' => 'required|string|max:500',
         ]);
 
         Review::create([
-            'user_id' => Auth::id(),
             'product_id' => $productId,
-            'content' => $request->content,
+            'user_id' => Auth::id(),  // ← ログイン中のユーザーIDを自動で入れる
+            'rating' => $request->rating,
+            'comment' => $request->comment,
         ]);
 
-        return back()->with('success', 'レビューを投稿しました');
+        return redirect()->route('reviews.show', $productId)
+                        ->with('success', 'レビューを投稿しました！');
     }
+
 }

@@ -48,5 +48,6 @@ Route::middleware('auth')->group(function () {
     Route::post('/favorites/toggle/{id}', [FavoriteController::class, 'toggle'])->name('favorites.toggle');
 
     // レビュー投稿
-    Route::post('/products/{id}/review', [ReviewController::class, 'store'])->name('review.store');
+    Route::get('/reviews/{productId}', [ReviewController::class, 'show'])->name('reviews.show');
+    Route::post('/reviews/{productId}', [ReviewController::class, 'store'])->name('reviews.store');
 });
