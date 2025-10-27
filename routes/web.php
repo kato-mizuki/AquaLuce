@@ -5,6 +5,7 @@ use App\Http\Controllers\CartController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\OrderController;
 use App\Http\Controllers\FavoriteController;
+use App\Http\Controllers\AuthController;
 
 Route::get('/', [ProductController::class, 'home'])->name('home');
 Route::get('/cart', [CartController::class, 'index'])->name('cart.index');
@@ -20,4 +21,12 @@ Route::get('/favorites', [FavoriteController::class, 'index'])->name('favorites.
 Route::post('/favorites/add/{id}', [FavoriteController::class, 'add'])->name('favorites.add');
 Route::post('/favorites/remove/{id}', [FavoriteController::class, 'remove'])->name('favorites.remove');
 Route::post('/favorites/toggle/{id}', [FavoriteController::class, 'toggle'])->name('favorites.toggle');
+Route::get('/login', [AuthController::class, 'showLoginForm'])->name('login.form');
+Route::post('/login', [AuthController::class, 'login'])->name('login');
+Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 
+Route::middleware('auth')->group(function () {
+    Route::get('/dashboard', function () {
+        return view('dashboard'); // ログイン後のページ
+    })->name('dashboard');
+});

@@ -28,6 +28,7 @@
                     <li><a href="{{ route('products.index') }}">Products</a></li>
                     <li><a href="{{ route('favorites.index') }}">Favorites</a></li>
                     <li><a href="{{ route('cart.index') }}" id="purchaseBtn">Cart</a></li>
+                    <li><a href="{{ route('login') }}">Login</a></li>
                 </ul>
             </nav>
         </header>

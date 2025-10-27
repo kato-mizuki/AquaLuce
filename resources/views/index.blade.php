@@ -102,7 +102,7 @@
     <section class="cta">
         <h2>Discover Your Glow</h2>
         <p>今すぐ Blueveil の透明感あふれるスキンケアを体験しましょう。</p>
-        <a href="#products" class="btn btn-large">Shop Now</a>
+        <a href="{{ route('products.index')}}" class="btn-large">Shop Now</a>
     </section>
 
 @endsection
