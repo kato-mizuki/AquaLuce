@@ -72,6 +72,41 @@
     .nav-links a:hover::after {
         width: 100%;
     }
+
+    .logout-link {
+        background: none;
+        border: none;
+        color: #006C91;
+        cursor: pointer;
+        font-size: 1rem;
+        padding: 0;
+        margin: 0;
+        text-decoration: none;
+        font-weight: 600;
+        position: relative;
+        transition: color 0.3s;
+    }
+
+    /* 疑似要素で下線を作る場合 */
+    .logout-link::after {
+        content: "";
+        position: absolute;
+        bottom: -4px;
+        left: 0;
+        width: 0%;
+        height: 2px;
+        background: #00A8E8;
+        transition: width 0.3s;
+    }
+
+    /* ホバー時に色と下線を出す */
+    .logout-link:hover {
+        color: #00A8E8;
+    }
+
+    .logout-link:hover::after {
+        width: 100%;
+    }
     @media screen and (max-width: 768px) {
     .nav-links {
         flex-direction: column;

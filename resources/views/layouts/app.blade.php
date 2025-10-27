@@ -28,9 +28,23 @@
                 <ul class="nav-links">
                     <li><a href="/">Home</a></li>
                     <li><a href="{{ route('products.index') }}">Products</a></li>
-                    <li><a href="{{ route('favorites.index') }}">Favorites</a></li>
-                    <li><a href="{{ route('cart.index') }}" id="purchaseBtn">Cart</a></li>
-                    <li><a href="{{ route('login') }}">Login</a></li>
+                     @guest
+                        <!-- 未ログインの場合 -->
+                        <li><a href="{{ route('login.form') }}">Login</a></li>
+                        <li><a href="{{ route('register.form') }}">Signup</a></li>
+                    @endguest
+
+                    @auth
+                        <!-- ログイン中の場合 -->
+                        <li><a href="{{ route('favorites.index') }}">Favorite</a></li>
+                        <li><a href="{{ route('cart.index') }}" id="purchaseBtn">Cart</a></li>
+                        <li>
+                            <form method="POST" action="{{ route('logout') }}">
+                                @csrf
+                                <button type="submit" class="logout-link">Logout</button>
+                            </form>
+                        </li>
+                    @endauth
                 </ul>
             </nav>
         </header>

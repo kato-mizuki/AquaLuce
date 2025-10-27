@@ -47,20 +47,25 @@
     </section>
 
     <!-- Before / After Section -->
-    <section class="before-after">
+    <section class="before-after-section">
         <h2 class="section-title">Before & After</h2>
+
         <div class="ba-container">
             <div class="ba-card">
                 <h3>Before</h3>
-                <img src="{{ asset('img/before.png') }}" alt="Before Skin">
+                <div class="ba-image-wrapper">
+                    <img src="{{ asset('img/before.png') }}" alt="Before Skin">
+                </div>
             </div>
             <div class="ba-card">
                 <h3>After</h3>
-                <img src="{{ asset('img/after.png') }}" alt="After Skin">
+                <div class="ba-image-wrapper">
+                    <img src="{{ asset('img/after.png') }}" alt="After Skin">
+                </div>
             </div>
         </div>
 
-        <div class="effect-icons">
+        <div class="ba-effects">
             <div class="effect-item">
                 <i class="fa-solid fa-droplet"></i>
                 <p>保湿</p>
@@ -75,6 +80,7 @@
             </div>
         </div>
     </section>
+
 
     <!-- Testimonials Section -->
     <section class="testimonials">
