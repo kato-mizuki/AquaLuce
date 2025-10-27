@@ -9,10 +9,6 @@ use App\Models\Favorite;
 
 class FavoriteController extends Controller
 {
-    public function __construct()
-    {
-        $this->middleware('auth');
-    }
     // お気に入り一覧表示
     public function index()
     {
@@ -35,13 +31,16 @@ class FavoriteController extends Controller
     }
 
     // お気に入り削除
-    public function remove($id)
+    public function removeFromPage($id)
     {
         $favorites = session()->get('favorites', []);
         if (($key = array_search($id, $favorites)) !== false) {
             unset($favorites[$key]);
             session(['favorites' => array_values($favorites)]);
         }
-        return response()->json(['status' => 'removed']);
+
+        // お気に入りページに戻る
+        return redirect()->route('favorites.index')
+                        ->with('success', 'お気に入りから削除しました');
     }
 }

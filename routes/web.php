@@ -44,7 +44,8 @@ Route::middleware('auth')->group(function () {
     // お気に入り関連
     Route::get('/favorites', [FavoriteController::class, 'index'])->name('favorites.index');
     Route::post('/favorites/add/{id}', [FavoriteController::class, 'add'])->name('favorites.add');
-    Route::post('/favorites/remove/{id}', [FavoriteController::class, 'remove'])->name('favorites.remove');
+    // 修正後（フォーム送信用に変更）
+    Route::post('/favorites/remove/{id}', [FavoriteController::class, 'removeFromPage'])->name('favorites.remove');
     Route::post('/favorites/toggle/{id}', [FavoriteController::class, 'toggle'])->name('favorites.toggle');
 
     // レビュー投稿
