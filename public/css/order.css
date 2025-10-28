@@ -236,3 +236,47 @@
         font-size: 1.6rem;
     }
 }
+/* ================================
+   注文履歴ページ (order/history)
+   ================================ */
+   .orders-container {
+    max-width: 1000px;
+    margin: 8% auto auto;
+    background: linear-gradient(135deg, #f0f8ff, #ffffff);
+    border-radius: 20px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+    padding: 40px;
+  }
+
+  .orders-container h2 {
+    color: #014f9a;
+    font-weight: bold;
+    margin-bottom: 30px;
+  }
+
+  .table {
+    background-color: #fff;
+    border-radius: 15px;
+    overflow: hidden;
+  }
+
+  .table thead th {
+    background-color: #e6f1ff !important;
+    color: #014f9a;
+    font-weight: bold;
+  }
+
+  .table-hover tbody tr:hover {
+    background-color: #f5faff;
+  }
+
+  .btn-outline-primary {
+    border-color: #014f9a;
+    color: #014f9a;
+  }
+
+  .btn-outline-primary:hover {
+    background-color: #014f9a;
+    color: #fff;
+  }
+
