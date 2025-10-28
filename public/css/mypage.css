@@ -26,7 +26,6 @@
     padding: 20px;
     transition: transform 0.3s ease;
     width: 100%;
-    max-width: 250px;
 }
 
 .product:hover {
@@ -39,4 +38,25 @@
     object-fit: cover;
     border-radius: 12px;
     margin-bottom: 15px;
+}
+
+.btn-outline-success{
+    background: #a2d2ff;
+  color: #014f9a;
+  padding: 8px 18px;
+  border-radius: 25px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  display: inline-block;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  margin-left: 20px;
+}
+
+.btn-outline-success:hover {
+  background: #00adef;
+  color: #fff;
+  transform: translateY(-1px);
 }

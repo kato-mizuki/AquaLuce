@@ -143,7 +143,7 @@
    ================================ */
 
 /* ページ全体 */
-.order-complete {
+      .order-complete {
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -242,7 +242,7 @@
    .orders-container {
     max-width: 1000px;
     margin: 8% auto auto;
-    background: linear-gradient(135deg, #f0f8ff, #ffffff);
+    background-color: #d0ebff;
     border-radius: 20px;
     box-shadow: 0 4px 20px rgba(0,0,0,0.08);
     padding: 40px;

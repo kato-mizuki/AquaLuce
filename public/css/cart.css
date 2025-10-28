@@ -122,7 +122,7 @@
   transition: all 0.3s ease;
 }
 
-.btn-remove {
+td .btn-remove {
   background: #a2d2ff;
   color: #014f9a;
   padding: 8px 18px;
@@ -131,7 +131,7 @@
   transition: all 0.3s ease;
 }
 
-.btn-remove:hover {
+td .btn-remove:hover {
   background: #00adef;
   color: #fff;
   transform: translateY(-1px);

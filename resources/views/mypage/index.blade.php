@@ -19,7 +19,7 @@
     <!-- お気に入りへのリンク -->
     <div class="mb-4">
         <h3>お気に入り</h3>
-        <a href="{{ route('favorites.index') }}" class="btn btn-primary">お気に入り一覧を見る</a>
+        <a href="{{ route('favorites.index') }}" class="btn btn-primary">お気に入りを見る</a>
     </div>
 
     <!-- 購入履歴へのリンク -->
