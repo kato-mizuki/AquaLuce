@@ -17,6 +17,7 @@
         <link rel="stylesheet" href="{{ asset('css/order.css') }}">
         <link rel="stylesheet" href="{{ asset('css/favorite.css') }}">
         <link rel="stylesheet" href="{{ asset('css/review.css') }}">
+        <link rel="stylesheet" href="{{ asset('css/mypage.css') }}">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     </head>
     <body>
@@ -38,7 +39,7 @@
 
                     @auth
                         <!-- ログイン中の場合 -->
-                        <li><a href="{{ route('favorites.index') }}">Favorite</a></li>
+                        <li><a href="{{ route('mypage.index') }}">MyPage</a></li>
                         <li><a href="{{ route('cart.index') }}" id="purchaseBtn">Cart</a></li>
                         <li>
                             <form method="POST" action="{{ route('logout') }}">

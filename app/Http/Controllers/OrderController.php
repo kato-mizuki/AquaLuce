@@ -71,4 +71,15 @@ class OrderController extends Controller
 
         return view('order.complete', compact('order'));
     }
+    public function history()
+    {
+        $user = Auth::user();
+
+        $orders = Order::with('orderItems.product')
+            ->where('user_id', $user->id)
+            ->latest()
+            ->get();
+
+        return view('order.history', compact('orders'));
+    }
 }

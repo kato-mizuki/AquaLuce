@@ -1,0 +1,42 @@
+.mypage-container {
+    margin: 60px auto;
+    padding: 40px;
+    max-width: 1200px;
+    background: #f9f9f9;
+    border-radius: 15px;
+}
+
+.user-info p {
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+    justify-items: center;
+}
+
+.product {
+    background-color: #fff;
+    border-radius: 15px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+    text-align: center;
+    padding: 20px;
+    transition: transform 0.3s ease;
+    width: 100%;
+    max-width: 250px;
+}
+
+.product:hover {
+    transform: translateY(-5px);
+}
+
+.product img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 12px;
+    margin-bottom: 15px;
+}
