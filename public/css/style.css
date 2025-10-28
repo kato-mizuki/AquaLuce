@@ -6,6 +6,14 @@
   padding: 40px 0;
 }
 
+.products h2{
+  text-align: center;
+  color: #014f9a;
+  font-size: 1.8rem;
+  margin-top: 40px;
+  position: relative;
+}
+
 .products .product {
   background-color: #fff;
   border-radius: 16px;
@@ -60,7 +68,6 @@
   align-items: center;
   justify-content: center; /* ← 横方向の中央寄せ */
   padding: 60px;
-  
   background: linear-gradient(135deg, #f0f8ff, #a2d2ff);
   border-radius: 20px;
   box-shadow: 0 4px 15px rgba(0,0,0,0.1);

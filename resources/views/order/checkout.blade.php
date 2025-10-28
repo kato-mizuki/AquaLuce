@@ -9,26 +9,27 @@
 
         <div class="mb-3">
             <label class="form-label">お名前</label>
-            <input type="text" name="name" class="form-control">
+            <input type="text" id="name" name="name" class="form-control">
         </div>
 
         <div class="mb-3">
             <label class="form-label">メールアドレス</label>
-            <input type="email" name="email" class="form-control">
+            <input type="email" id="email" name="email" class="form-control">
         </div>
 
         <div class="mb-3">
             <label class="form-label">電話番号</label>
-            <input type="text" name="phone" class="form-control">
+            <input type="text" id="phone" name="phone" class="form-control">
         </div>
 
-        <div class="mb-3">
-            <label class="form-label">郵便番号</label>
-            <div class="postal-wrapper">
-                <input type="text" id="postal_code" name="postal_code" class="form-control">
-                <button type="button" id="auto_fill" class="btn-primary">住所自動入力</button>
+        <div class="mb-3 row align-items-center">
+            <label for="postal_code" class="col-form-label col-auto me-2">郵便番号</label>
+            <div class="col d-flex align-items-center gap-2 flex-wrap">
+                <input type="text" id="postal_code" name="postal_code" class="form-control" style="width: 150px;">
+                <button type="button" id="auto_fill" class="btn-primary text-nowrap">住所自動入力</button>
             </div>
         </div>
+
 
         <div class="mb-3">
             <label class="form-label">都道府県</label>

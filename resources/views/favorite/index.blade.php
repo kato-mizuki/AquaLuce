@@ -18,7 +18,7 @@
                             <form action="{{ route('favorites.remove', $product->id) }}" method="POST" class="favorite-form">
                                 @csrf
                                 <button type="submit" class="btn-remove">
-                                    お気に入り解除
+                                    ♥
                                 </button>
                             </form>
                             <a href="{{ route('products.show', $product->id) }}" class="btn-detail">商品詳細へ</a>

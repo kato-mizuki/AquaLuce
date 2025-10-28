@@ -122,26 +122,6 @@
   transition: all 0.3s ease;
 }
 
-.btn-primary {
-  background: #a2d2ff;
-  color: #014f9a;
-  padding: 8px 18px;
-  border-radius: 25px;
-  font-weight: 600;
-  transition: all 0.3s ease;
-  display: inline-block;
-  border: none;
-  cursor: pointer;
-  font-weight: 600;
-  transition: all 0.3s ease;
-}
-
-.btn-primary:hover {
-  background: #00adef;
-  color: #fff;
-  transform: translateY(-1px);
-}
-
 .btn-remove {
   background: #a2d2ff;
   color: #014f9a;

@@ -6,6 +6,8 @@
         <meta name="csrf-token" content="{{ csrf_token() }}">
         <title>@yield('title', 'AquaLuce')</title>
 
+        {{-- Bootstrap --}}
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
         {{-- CSS --}}
         <link rel="stylesheet" href="{{ asset('css/auth.css') }}">
         <link rel="stylesheet" href="{{ asset('css/index.css') }}">
@@ -77,6 +79,8 @@
         </footer>
 
         {{-- JS --}}
+        
         <script src="{{ asset('js/java.js') }}"></script>
+        <script src="{{ asset('js/cart.js') }}"></script>
     </body>
 </html>

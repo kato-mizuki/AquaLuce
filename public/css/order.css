@@ -32,7 +32,7 @@
 }
 
 /* 入力フォーム */
-.checkout-container .form-label {
+.checkout-container label {
   font-weight: bold;
   color: #014f9a;
 }
@@ -85,6 +85,27 @@
 }
 
 /* ボタンエリア */
+
+.btn-primary {
+  background: #a2d2ff;
+  color: #014f9a;
+  padding: 8px 18px;
+  border-radius: 25px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  display: inline-block;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  margin-left: 20px;
+}
+
+.btn-primary:hover {
+  background: #00adef;
+  color: #fff;
+  transform: translateY(-1px);
+}
 .checkout-container .btn {
   display: inline-block;
   padding: 10px 25px;
