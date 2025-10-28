@@ -204,6 +204,30 @@ class ProductSeeder extends Seeder
             'description' => '潤いがとけこむ、海のようなツヤめき唇へ。',
         ]);
 
+        Product::create([
+            'name' => 'Blueveil Coral Kiss Lip Balm',
+            'price' => 1800,
+            'category' => 'リップケア',
+            'image' => 'lipcare/coralkiss.png',
+            'description' => '海藻エキスとコーラルオイルを配合。乾燥や荒れを防ぎ、自然なツヤと血色感を与えるリップバーム。紫外線から唇を守りながら、透明感のあるうるおいを長時間キープします。',
+        ]);
+
+        Product::create([
+            'name' => 'Blueveil Lip Polish',
+            'price' => 1980,
+            'category' => 'リップケア',
+            'image' => 'lipcare/ripscrab.png',
+            'description' => '乾燥や荒れが気になる唇に、やさしくうるおいを与えるリップスクラブ。天然由来のシュガー粒が古い角質をやさしくオフし、ホホバオイルとシアバターがしっとりなめらかに整えます。使用後はふっくら柔らかな唇へ。ほんのり甘いバニラ＆ベリーの香りで癒しのケアタイムを。',
+        ]);
+
+        Product::create([
+            'name' => 'Hydrating Lip Color',
+            'price' => 2500,
+            'category' => 'リップケア',
+            'image' => 'lipcare/lipstick.png',
+            'description' => '植物由来のオイルをたっぷり配合した保湿リップカラー。唇の乾燥を防ぎながら、鮮やかな発色が長時間続きます。',
+        ]);
+
         // ===============================
         // 🌸 フレグランス
         // ===============================

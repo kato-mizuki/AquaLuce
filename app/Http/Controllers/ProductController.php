@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Http\Request;
 use App\Models\Product;
 
 class ProductController extends Controller
@@ -13,15 +14,31 @@ class ProductController extends Controller
         return view('index', compact('products'));
     }
 
-    public function index()
+     public function index(Request $request)
     {
-        $products = Product::all();
-        // セッションから favorites 配列を取得（なければ空配列）
         $favorites = session()->get('favorites', []);
+        // GETパラメータからカテゴリを取得
+        $category = $request->query('category', '');
 
-        // ビューに渡す
-        return view('products.index', compact('products', 'favorites'));
+        // 商品を取得（カテゴリでフィルタリング）
+        $query = Product::query();
+
+        if (!empty($category)) {
+            $query->where('category', $category);
+        }
+
+        $products = $query->get();
+
+        // 登録されているカテゴリ一覧を取得（重複排除）
+        $categories = Product::select('category')
+            ->whereNotNull('category')
+            ->distinct()
+            ->pluck('category');
+
+        // ビューにデータを渡す
+        return view('products.index', compact('products', 'categories', 'category'));
     }
+
 
     public function show($id)
     {
