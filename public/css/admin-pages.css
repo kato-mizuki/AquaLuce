@@ -1,0 +1,210 @@
+/* ========== 全体設定 ========== */
+body {
+    font-family: 'Playfair Display', serif;
+    background: #f8f9fa;
+    margin: 0;
+    padding: 0;
+}
+
+/* ========== ナビゲーションバー ========== */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(6px);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    z-index: 1000;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+}
+
+.nav-logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8rem;
+    font-weight: bold;
+}
+.nav-logo a {
+    color: #00A8E8;
+    text-decoration: none;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    margin: 0;
+    padding: 0 10% 0;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #006C91;
+    font-weight: 600;
+    transition: color 0.3s;
+}
+.nav-links a::after {
+    content: "";
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 0%;
+    height: 2px;
+    background: #00A8E8;
+    transition: width 0.3s;
+}
+.nav-links a:hover {
+    color: #00A8E8;
+}
+.nav-links a:hover::after {
+    width: 100%;
+}
+
+.logout-link {
+    background: none;
+    border: none;
+    color: #006C91;
+    cursor: pointer;
+    font-size: 1rem;
+    padding: 0;
+    font-weight: 600;
+    position: relative;
+    transition: color 0.3s;
+}
+.logout-link::after {
+    content: "";
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 0%;
+    height: 2px;
+    background: #00A8E8;
+    transition: width 0.3s;
+}
+.logout-link:hover {
+    color: #00A8E8;
+}
+.logout-link:hover::after {
+    width: 100%;
+}
+
+/* ========== メインコンテンツ ========== */
+main.container {
+    padding-top: 100px; /* ナビバーの分だけ余白 */
+    padding-bottom: 50px;
+}
+
+.title{
+    margin-left: 5%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.btn{
+    padding: 2% 10% 0;
+}
+/* ========== カード ========== */
+.card {
+    border-radius: 0.5rem;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    margin-bottom: 20px;
+    background-color: #fff;
+    padding: 20px;
+    width: 90%;
+    margin-left: 5%;
+}
+
+/* ========== ボタン ========== */
+.btn-primary {
+    background-color: #00A8E8;
+    border-color: #00A8E8;
+    padding: 10px;
+    border-radius: 15px;
+    color: #f8f9fa;
+}
+.btn-primary:hover {
+    background-color: #006C91;
+    border-color: #006C91;
+}
+
+.btn-danger {
+    background-color: #ff6b6b;
+    border-color: #ff6b6b;
+    padding: 10px;
+    border-radius: 15px;
+}
+.btn-danger:hover {
+    background-color: #e05a5a;
+    border-color: #e05a5a;
+}
+
+.btn-secondary {
+    background-color: #00A8E8;
+    border-color: #00A8E8;
+    padding: 10px;
+    border-radius: 15px;
+    color: #f8f9fa;
+}
+.btn-secondary:hover {
+    background-color: #006C91;
+    border-color: #006C91;
+}
+
+/* ========== テーブル ========== */
+table {
+    width: 90%;
+    border-collapse: collapse;
+    background-color: #fff;
+    border-radius: 0.5rem;
+    overflow: hidden;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+    margin-left: 5%;
+}
+
+table th, table td {
+    padding: 12px 15px;
+    text-align: left;
+    vertical-align: middle;
+}
+
+table th {
+    background-color: #f1f5f9;
+    color: #333;
+    font-weight: 600;
+}
+
+table tr:nth-child(even) {
+    background-color: #fafafa;
+}
+
+/* ========== モーダル ========== */
+.modal-content {
+    border-radius: 0.5rem;
+}
+
+/* ========== グラフ（Chart.jsキャンバス調整） ========== */
+canvas {
+    max-width: 100%;
+    height: auto;
+}
+
+/* ========== レスポンシブ ========== */
+@media screen and (max-width: 768px) {
+    .nav-links {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    table th, table td {
+        padding: 10px;
+    }
+
+    main.container {
+        padding-top: 120px;
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+}

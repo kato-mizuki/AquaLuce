@@ -37,32 +37,41 @@ class ProductController extends Controller
         return redirect()->route('admin.products.index')->with('success', '商品を追加しました。');
     }
 
-    public function edit(Product $product)
+    // 編集フォーム表示
+    public function edit($id)
     {
+        $product = Product::findOrFail($id);
         return view('admin.products.edit', compact('product'));
     }
 
-    public function update(Request $request, Product $product)
+    // 更新処理
+    public function update(Request $request, $id)
     {
-        $request->validate([
-            'name' => 'required',
+        $product = Product::findOrFail($id);
+
+        $validated = $request->validate([
+            'name' => 'required|string|max:255',
             'price' => 'required|numeric',
-            'description' => 'nullable',
-            'image' => 'nullable|image',
+            'description' => 'required|string',
+            'image' => 'nullable|image|max:2048',
         ]);
 
-        $product->fill($request->only(['name', 'price', 'description']));
         if ($request->hasFile('image')) {
-            $product->image = $request->file('image')->store('products', 'public');
+            // 新しい画像をアップロード
+            $path = $request->file('image')->store('products', 'public');
+            $validated['image'] = $path;
         }
-        $product->save();
+
+        $product->update($validated);
 
         return redirect()->route('admin.products.index')->with('success', '商品を更新しました。');
     }
 
-    public function destroy(Product $product)
+    public function destroy($id)
     {
+        $product = Product::findOrFail($id);
         $product->delete();
+
         return redirect()->route('admin.products.index')->with('success', '商品を削除しました。');
     }
 }
