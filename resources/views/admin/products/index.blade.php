@@ -47,7 +47,7 @@
                             <td class="p-3 border-b">{{ $product->id }}</td>
                             <td class="p-3 border-b">
                                 @if ($product->image)
-                                    <img src="{{ asset('storage/' . $product->image) }}" alt="" class="w-16 h-16 object-cover rounded">
+                                    <img src="{{ asset('img/' . $product->image) }}" alt="" class="w-16 h-16 object-cover rounded">
                                 @else
                                     <span class="text-gray-400">なし</span>
                                 @endif

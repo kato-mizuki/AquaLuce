@@ -50,7 +50,7 @@
                     @foreach ($latestProducts as $product)
                         <div class="border rounded-xl p-4 shadow-sm hover:shadow-md transition">
                             @if ($product->image)
-                                <img src="{{ asset('storage/' . $product->image) }}" class="w-full h-40 object-cover rounded mb-3">
+                                <img src="{{ asset('img/' . $product->image) }}" class="w-full h-40 object-cover rounded mb-3">
                             @else
                                 <div class="w-full h-40 bg-gray-200 flex items-center justify-center rounded mb-3 text-gray-400">
                                     No Image
