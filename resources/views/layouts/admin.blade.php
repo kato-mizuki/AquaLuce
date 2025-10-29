@@ -15,6 +15,10 @@
         <div class="nav-logo"><a href="{{ route('admin.dashboard') }}">AquaLuce 管理画面</a></div>
         <ul class="nav-links">
             <li><a href="{{ route('admin.products.index') }}">商品一覧</a></li>
+            <li><a href="{{ route('admin.admins.create') }}" >
+                    新規管理者追加
+                </a>
+            </li>
             <li>
                 <form action="{{ route('admin.logout') }}" method="POST" class="d-inline">
                     @csrf

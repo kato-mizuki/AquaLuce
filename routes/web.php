@@ -66,6 +66,9 @@ Route::prefix('admin')->name('admin.')->group(function () {
     Route::post('/register', [AdminController::class, 'register'])->name('register.submit');
     // 認証後のみアクセス可能
     Route::middleware('auth:admin')->group(function () {
+        // 管理者追加画面
+        Route::get('/admins/create', [AdminController::class, 'showRegisterForm'])->name('admins.create');
+        Route::post('/admins', [AdminController::class, 'register'])->name('admins.store');
         Route::get('/dashboard', [AdminController::class, 'dashboard'])->name('dashboard');
         Route::resource('/products', AdminProductController::class);
         Route::post('/logout', [AdminController::class, 'logout'])->name('logout');
