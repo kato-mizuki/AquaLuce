@@ -58,9 +58,13 @@ Route::middleware('auth')->group(function () {
 });
 // 管理者ログイン
 Route::prefix('admin')->name('admin.')->group(function () {
+    // ログイン関連
     Route::get('/login', [AdminController::class, 'showLoginForm'])->name('login');
     Route::post('/login', [AdminController::class, 'login'])->name('login.submit');
-
+    // 新規登録（ログイン前でもアクセス可能）
+    Route::get('/register', [AdminController::class, 'showRegisterForm'])->name('register');
+    Route::post('/register', [AdminController::class, 'register'])->name('register.submit');
+    // 認証後のみアクセス可能
     Route::middleware('auth:admin')->group(function () {
         Route::get('/dashboard', [AdminController::class, 'dashboard'])->name('dashboard');
         Route::resource('/products', AdminProductController::class);
