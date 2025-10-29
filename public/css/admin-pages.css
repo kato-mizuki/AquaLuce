@@ -154,7 +154,7 @@ main.container {
 }
 
 /* ========== テーブル ========== */
-table {
+.table {
     width: 90%;
     border-collapse: collapse;
     background-color: #fff;
@@ -164,13 +164,15 @@ table {
     margin-left: 5%;
 }
 
-table th, table td {
+.table th, .table td {
     padding: 12px 15px;
     text-align: left;
-    vertical-align: middle;
+    vertical-align: middle !important;
+    align-items: center; /* 垂直中央揃え */
+    justify-content: center;
 }
 
-table th {
+.table th {
     background-color: #f1f5f9;
     color: #333;
     font-weight: 600;

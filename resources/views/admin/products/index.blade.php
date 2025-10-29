@@ -7,7 +7,6 @@
     <a href="{{ route('admin.products.create') }}" class="btn btn-primary mb-4">新規商品追加</a>
   </div>
 </div>
-
 <table class="table">
     <thead>
         <tr>

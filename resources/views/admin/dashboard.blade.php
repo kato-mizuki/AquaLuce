@@ -25,7 +25,7 @@
 
 <div class="card mt-4">
     <h4>売上グラフ（ダミーデータ）</h4>
-    <canvas id="salesChart" height="100"></canvas>
+    <canvas id="salesChart" height="300"></canvas>
 </div>
 
 <script>
