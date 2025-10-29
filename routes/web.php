@@ -10,6 +10,7 @@ use App\Http\Controllers\AuthController;   // ログイン
 use App\Http\Controllers\RegisterController; // サインアップ
 use App\Http\Controllers\MypageController; // マイページ
 use App\Http\Controllers\ProfileController; // プロフィール
+use App\Http\Controllers\AddressController; // 住所
 use App\Http\Controllers\Admin\AdminController;  // 管理者
 use App\Http\Controllers\Admin\ProductController as AdminProductController; //　管理者・商品
 
@@ -50,6 +51,14 @@ Route::middleware('auth')->group(function () {
     Route::post('/reviews/{productId}', [ReviewController::class, 'store'])->name('reviews.store');
     // MyPage用
     Route::get('/mypage', [MypageController::class, 'index'])->name('mypage.index');
+    Route::prefix('mypage')->middleware('auth')->group(function () {
+        Route::get('/addresses', [AddressController::class, 'index'])->name('addresses.index');
+        Route::get('/addresses/create', [AddressController::class, 'create'])->name('addresses.create');
+        Route::post('/addresses', [AddressController::class, 'store'])->name('addresses.store');
+        Route::get('/addresses/{address}/edit', [AddressController::class, 'edit'])->name('addresses.edit');
+        Route::put('/addresses/{address}', [AddressController::class, 'update'])->name('addresses.update');
+        Route::delete('/addresses/{address}', [AddressController::class, 'destroy'])->name('addresses.destroy');
+    });
     // プロフィール設定
     Route::get('/profile/edit', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::post('/profile/edit', [ProfileController::class, 'update'])->name('profile.update');

@@ -1,0 +1,32 @@
+.container h2{
+    margin-top: 10%;
+}
+
+.btn-secondary {
+  background-color: #ccc;
+  color: #00A8E8;
+  margin-right: 15px;
+  padding: 8px 18px;
+  border-radius: 25px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  display: inline-block;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  margin-left: 20px;
+}
+
+.btn-secondary:visited {
+    color: #00A8E8;
+}
+.btn-secondary:hover {
+  background-color: #aaa;
+}
+
+.form input{
+    width: 70%;
+    text-align: center;
+    justify-content: center;
+}

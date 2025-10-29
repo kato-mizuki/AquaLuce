@@ -16,6 +16,12 @@
         <a href="{{ route('profile.edit') }}" class="btn btn-outline-success mt-2">プロフィール編集</a>
     </div>
 
+    <!-- 住所登録・編集のリンク -->
+    <div class="mb-4">
+        <h3>住所登録・編集</h3>
+        <a href="{{ route('addresses.index') }}" class="btn btn-primary">住所登録・編集へ</a>
+    </div>
+
     <!-- お気に入りへのリンク -->
     <div class="mb-4">
         <h3>お気に入り</h3>
