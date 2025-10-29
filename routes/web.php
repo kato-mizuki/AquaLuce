@@ -10,6 +10,8 @@ use App\Http\Controllers\AuthController;   // ログイン
 use App\Http\Controllers\RegisterController; // サインアップ
 use App\Http\Controllers\MypageController; // マイページ
 use App\Http\Controllers\ProfileController; // プロフィール
+use App\Http\Controllers\Admin\AdminController;  // 管理者
+use App\Http\Controllers\Admin\ProductController as AdminProductController; //　管理者・商品
 
 // -----------------------------
 // TOPページ（誰でもアクセス可能）
@@ -53,4 +55,15 @@ Route::middleware('auth')->group(function () {
     Route::post('/profile/edit', [ProfileController::class, 'update'])->name('profile.update');
     // マイページ用購入履歴
     Route::get('/order/history', [OrderController::class, 'history'])->name('order.history');
+});
+// 管理者ログイン
+Route::prefix('admin')->name('admin.')->group(function () {
+    Route::get('/login', [AdminController::class, 'showLoginForm'])->name('login');
+    Route::post('/login', [AdminController::class, 'login'])->name('login.submit');
+
+    Route::middleware('auth:admin')->group(function () {
+        Route::get('/dashboard', [AdminController::class, 'dashboard'])->name('dashboard');
+        Route::resource('/products', AdminProductController::class);
+        Route::post('/logout', [AdminController::class, 'logout'])->name('logout');
+    });
 });
