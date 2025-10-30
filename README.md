@@ -40,16 +40,16 @@ HTML/CSS/JavaScriptを中心に、**Laravel（PHP）でのバックエンド構�
 
 ## 📂 ディレクトリ構成
 
-AquaLuce/
-├─ public/ # CSS・JavaScript・画像などの公開用ファイル
-│ ├─ css/
-│ ├─ js/
-│ └─ img/
-├─ resources/
-│ └─ views/ # BladeテンプレートやHTMLファイル
-├─ routes/ # ルーティング設定
-├─ app/ # アプリケーション本体
-└─ README.md
+AquaLuce/  
+├─ public/ # CSS・JavaScript・画像などの公開用ファイル  
+│ ├─ css/  
+│ ├─ js/  
+│ └─ img/  
+├─ resources/  
+│ └─ views/ # BladeテンプレートやHTMLファイル  
+├─ routes/ # ルーティング設定  
+├─ app/ # アプリケーション本体  
+└─ README.md  
 
 ---
 
@@ -70,14 +70,6 @@ php artisan key:generate
 # 開発サーバー起動
 php artisan serve  
 ```
-
-## 🎨 デザインコンセプト
-
--テーマカラー：青系（#00ADEF）＋ 光のハイライト（白／淡い黄色）
--モチーフ：水面の反射と柔らかい波紋
--デザイン特徴：透明感・清潔感・モダンさを意識したUI
-
----
 
 ## 🎨 デザインコンセプト
 
