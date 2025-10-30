@@ -134,37 +134,37 @@ Webエンジニア志望。
 ## 📸 プレビュー例
 
 ### 1️⃣ TOPページ
-![TOPページ](./images/demo_top.png)  
+![TOPページ](https://github.com/user-attachments/assets/c1a1c651-2ca4-460a-b7a8-365095ab177d)  
 *ファーストビューとナビゲーションがわかる全体像。透明感のあるデザインを採用。*
 
 ---
 
 ### 2️⃣ 商品一覧ページ
-![商品一覧](./images/demo_product.png)  
+![商品一覧](https://github.com/user-attachments/assets/c418bbff-2a70-4516-ba91-282b3edb1a90)  
 *カード形式で複数の商品を表示。価格・お気に入りボタン・商品画像が確認可能。*
 
 ---
 
 ### 3️⃣ 商品詳細ページ
-![商品詳細](./images/demo_detail.png)  
+![商品詳細](https://github.com/user-attachments/assets/59364831-8cf1-4132-8ccb-fee4ba4b1028)  
 *選択した商品の詳細情報ページ。説明・価格・購入ボタンを表示。*
 
 ---
 
 ### 4️⃣ カートページ
-![カートページ](./images/demo_cart.png)  
+![カートページ](https://github.com/user-attachments/assets/22459229-27a3-4078-95af-541c622632f3)  
 *カート内商品一覧と合計金額を表示。購入手続きボタンも確認可能。*
 
 ---
 
 ### 5️⃣ 商品スライド（TOPページ下）
-![商品スライドGIF](./images/demo_slide.gif)  
+![商品スライドGIF](https://github.com/user-attachments/assets/91358cc9-5ad5-441f-9e3f-7b04c5475528)  
 *TOPページのファーストビュー下にある商品スライダーの動作デモ。自動で切り替わるアニメーション。*
 
 ---
 
 ### 6️⃣ お気に入り登録（動作GIF）
-![お気に入りGIF](./images/demo_favorite.gif)  
+![お気に入りGIF](https://github.com/user-attachments/assets/f11e4581-4946-47bb-9e24-412ad3845e05)
 *商品カードのハートボタンを押すとお気に入り登録・解除ができるアニメーション。*
 
 
