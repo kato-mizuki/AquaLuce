@@ -158,13 +158,13 @@ Webエンジニア志望。
 ---
 
 ### 5️⃣ 商品スライド（TOPページ下）
-![商品スライドGIF](https://github.com/user-attachments/assets/91358cc9-5ad5-441f-9e3f-7b04c5475528)  
+![商品スライドGIF](https://github.com/user-attachments/assets/c1f9df00-6d40-4e88-8772-0db8e5e1098d)    
 *TOPページのファーストビュー下にある商品スライダーの動作デモ。自動で切り替わるアニメーション。*
 
 ---
 
 ### 6️⃣ お気に入り登録（動作GIF）
-![お気に入りGIF](https://github.com/user-attachments/assets/f11e4581-4946-47bb-9e24-412ad3845e05)
+![お気に入りGIF](https://github.com/user-attachments/assets/f11e4581-4946-47bb-9e24-412ad3845e05)  
 *商品カードのハートボタンを押すとお気に入り登録・解除ができるアニメーション。*
 
 
