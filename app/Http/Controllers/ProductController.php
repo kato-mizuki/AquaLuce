@@ -36,7 +36,7 @@ class ProductController extends Controller
             ->pluck('category');
 
         // ビューにデータを渡す
-        return view('products.index', compact('products', 'categories', 'category'));
+        return view('products.index', compact('products', 'categories', 'category', 'favorites'));
     }
 
 

@@ -31,6 +31,10 @@
                 <img src="{{ asset('img/' . $product->image) }}" alt="{{ $product->name }}">
                 <h3>{{ $product->name }}</h3>
                 <p>¥{{ number_format($product->price) }}</p>
+                <span class="favorite-btn {{ in_array($product->id, $favorites) ? 'favorited' : '' }}"
+                    data-id="{{ $product->id }}">
+                    <i class="fa fa-heart"></i>
+                </span>
                 <a href="{{ route('products.show', $product->id) }}" class="btn btn-outline-primary">詳細を見る</a>
             </div>
         @endforeach
